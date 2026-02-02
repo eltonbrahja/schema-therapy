@@ -29,12 +29,12 @@ const features = [
 ];
 
 const schemaList = [
-  ['Abbandono / Instabilità', 'Mancanza di Affidabilità', 'Mancanza di Autonomia'],
-  ['Difetto / Vergogna', 'Instabilità Emotiva', 'Compromissione'],
-  ['Vulnerabilità', 'Dipendenza / Incompetenza', 'Soggezione'],
-  ['Autosacrificio', 'Inibizione Emotiva', 'Standard Infallibilistici'],
-  ['Merito / Status', 'Controllo / Perfezionismo', 'Negatività / Pessimismo'],
-  ['Inibizione / Rigidità', 'Punitività', 'Mancanza di Limiti'],
+  ['Abbandono', 'Autocontrollo Insufficiente', 'Autosacrificio'],
+  ['Deprivazione Emotiva', 'Dipendenza / Incompetenza', 'Fallimento'],
+  ['Grandiosità', 'Inadeguatezza', 'Inibizione Emotiva'],
+  ['Invischiamento', 'Isolamento Sociale', 'Negatività'],
+  ['Punitività', 'Ricerca di Approvazione', 'Sfiducia/Abuso'],
+  ['Sottomissione', 'Standard Rigidi', 'Vulnerabilità alla malattia e al danno'],
 ];
 
 export function Product() {
@@ -85,7 +85,7 @@ export function Product() {
               }`}
             >
               Cosa trovi
-              <span className="block italic text-[#8b5a3c]">nel raccoglitore</span>
+              <span className="block italic text-[#8b5a3c]">nel kit</span>
             </h2>
           </div>
           <div className="flex items-end">
@@ -134,7 +134,7 @@ export function Product() {
           
           <div className="pl-8 lg:pl-16">
             <h3 className="font-display text-3xl lg:text-4xl text-[#2d1f16] mb-4">
-              Gli 18 Schemi
+              I 18 Schemi
               <span className="text-[#8b5a3c] italic"> Maladattivi</span>
             </h3>
             <p className="text-[#5c4a3d] mb-12 max-w-2xl">
@@ -161,9 +161,9 @@ export function Product() {
 
             {/* Quality badge */}
             <div className="mt-12 inline-flex items-center gap-4 px-6 py-3 bg-[#2d1f16] text-white">
-              <span className="text-xs uppercase tracking-wider">Formato</span>
+              <span className="text-xs uppercase tracking-wider">Formato DL</span>
               <span className="w-px h-4 bg-white/20" />
-              <span className="text-sm">Cartoncino plastificato A4</span>
+              <span className="text-sm">Cartoncino plastificato</span>
             </div>
           </div>
         </div>
