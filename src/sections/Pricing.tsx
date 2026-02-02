@@ -89,7 +89,7 @@ export function Pricing() {
                   Edizione Professionale
                 </p>
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-7xl lg:text-8xl text-[#2d1f16]">€200</span>
+                  <span className="font-display text-7xl lg:text-8xl text-[#2d1f16]">€---</span>
                   <span className="text-[#7a6555]">IVA inclusa</span>
                 </div>
               </div>

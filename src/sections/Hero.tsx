@@ -78,50 +78,59 @@ export function Hero() {
             </div>
 
             {/* Main Title */}
-            <h1 
-              className={`font-display text-6xl sm:text-7xl lg:text-8xl text-[#2d1f16] mb-6 leading-[0.95] transition-all duration-700 delay-100 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              Schema
-              <span className="block italic text-[#8b5a3c]">Therapy</span>
-            </h1>
-
-            {/* Subtitle */}
-            <p 
-              className={`text-lg text-[#5c4a3d] max-w-md mb-8 font-light leading-relaxed transition-all duration-700 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              Il raccoglitore definitivo per professionisti della salute mentale. 
-              <span className="text-[#8b5a3c] font-medium"> 18 schemi</span>, 
-              <span className="text-[#8b5a3c] font-medium"> 54 immagini</span> 
-              fronte-retro in cartoncino plastificato.
-            </p>
-
-            {/* CTA */}
-            <div 
-              className={`flex flex-wrap gap-4 transition-all duration-700 delay-300 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <Button
-                onClick={scrollToProduct}
-                size="lg"
-                className="group bg-[#2d1f16] hover:bg-[#8b5a3c] text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
+              <h1 
+                className={`font-display text-6xl sm:text-7xl lg:text-8xl text-[#2d1f16] mb-6 leading-[0.95] transition-all duration-700 delay-100 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
-                Esplora il Contenuto
-                <ArrowDownRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-[#2d1f16]/20 text-[#2d1f16] hover:bg-[#2d1f16] hover:text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
+                Schema
+                <span className="block italic text-[#8b5a3c]">Therapy</span>
+              </h1>
+
+              <h5
+                className={`font-display text-4xl sm:text-5xl lg:text-6xl text-[#2d1f16] mb-6 leading-[0.95] transition-all duration-700 delay-100 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
-                Contattaci
-              </Button>
-            </div>
+                Edizione professionale
+              </h5>
+
+              {/* Subtitle */}
+              <p 
+                className={`text-lg text-[#5c4a3d] max-w-md mb-8 font-light leading-relaxed transition-all duration-700 delay-200 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                Un raccoglitore di schemi visivi per psicologi e psicoterapeuti che lavorano con la Schema Therapy.
+                <span className="text-[#8b5a3c] font-medium"> 18 schemi</span>,
+                <span className="text-[#8b5a3c] font-medium"> 54 immagini</span>
+                fronte‑retro in cartoncino plastificato.
+              </p>
+
+              {/* CTA */}
+              <div 
+                className={`flex flex-wrap gap-4 transition-all duration-700 delay-300 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                <Button
+                  onClick={scrollToProduct}
+                  size="lg"
+                  className="group bg-[#2d1f16] hover:bg-[#8b5a3c] text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
+                >
+                  Vedi il contenuto
+                  <ArrowDownRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border-[#2d1f16]/20 text-[#2d1f16] hover:bg-[#2d1f16] hover:text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
+                >
+                  Scrivici
+                </Button>
+              </div>
 
             {/* Stats */}
             <div 
