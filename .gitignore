@@ -1,0 +1,16 @@
+# Dipendenze
+node_modules/
+npm-debug.log*
+
+# Build
+dist/
+build/
+
+# Config locali
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/settings.json
+.idea/
