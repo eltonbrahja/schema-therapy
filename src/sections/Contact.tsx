@@ -119,7 +119,7 @@ export function Contact() {
                     Messaggio Inviato!
                   </h3>
                   <p className="text-[#c9b8a5]">
-                    Grazie per averci contattato. Ti risponderemo presto.
+                    Grazie per averci contattato. Ti risponderemo al più presto.
                   </p>
                 </div>
               ) : (

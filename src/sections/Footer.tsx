@@ -63,7 +63,7 @@ export function Footer() {
                   +39 123 456 7890
                 </a>
               </p>
-              <p className="text-[#7a6555]">Spedizione Italia</p>
+              <p className="text-[#7a6555]">Spedizione in tutta Italia</p>
             </div>
           </div>
         </div>

@@ -73,7 +73,7 @@ export function Hero() {
             >
               <Sparkles className="w-4 h-4 text-[#8b5a3c]" />
               <span className="text-xs font-medium text-[#8b5a3c] tracking-widest uppercase">
-                Edizione Professionale 2025
+                Edizione Professionale 2026
               </span>
             </div>
 
@@ -138,7 +138,7 @@ export function Hero() {
                 <p className="text-xs text-[#7a6555] uppercase tracking-wider mt-1">Immagini</p>
               </div>
               <div>
-                <p className="font-display text-4xl text-[#8b5a3c]">€200</p>
+                <p className="font-display text-4xl text-[#8b5a3c]">€---</p>
                 <p className="text-xs text-[#7a6555] uppercase tracking-wider mt-1">Prezzo</p>
               </div>
             </div>
