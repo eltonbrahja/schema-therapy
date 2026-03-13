@@ -37,7 +37,7 @@ const galleryItems = [
     title: 'Collezione',
     size: 'large',
     position: 'right',
-    src: '/img/collezione.png', // cambia con il nome reale
+    src: '/img/collezione.png', 
   },
   {
     id: 6,
