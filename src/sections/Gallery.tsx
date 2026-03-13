@@ -44,7 +44,7 @@ const galleryItems = [
     title: 'In Uso',
     size: 'medium',
     position: 'left',
-    src: '/img/in-uso.png', // cambia con il nome reale
+    src: '/img/raccoglitoreAperto.png',
   },
 ] as const;
 
