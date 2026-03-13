@@ -153,27 +153,27 @@ export function Hero() {
 
           {/* Colonna destra con immagine */}
           <div className="order-1 lg:order-2 relative">
-            <div
-              className={`relative transition-all duration-1000 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-            >
-              <div className="relative max-w-lg mx-auto lg:ml-auto">
-                {/* singola “carta” dietro */}
-                <div className="absolute inset-0 translate-x-6 translate-y-8 rotate-2 bg-[#d0b9a0] rounded-sm shadow-xl" />
+  <div
+    className={`relative transition-all duration-1000 delay-200 ${
+      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+    }`}
+  >
+    <div className="relative max-w-xl lg:max-w-2xl mx-auto lg:ml-auto">
+      {/* carta dietro più ampia */}
+      <div className="absolute inset-0 translate-x-8 translate-y-10 rotate-2 bg-[#d0b9a0] rounded-sm shadow-2xl" />
 
-                {/* tavola principale */}
-                <div className="relative bg-[#f5f0e8] rounded-sm shadow-[0_24px_60px_rgba(0,0,0,0.18)] overflow-hidden">
-                  <div className="p-6 sm:p-8">
-                    <div className="border border-[#cbb8a3] rounded-sm overflow-hidden bg-[#f5f0e8]">
-                      <img
-                        src="/img/immagineHero.jpg"
-                        alt="Raccoglitore Schema Therapy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
+      {/* tavola principale più grande */}
+      <div className="relative bg-[#f5f0e8] rounded-sm shadow-[0_28px_80px_rgba(0,0,0,0.22)] overflow-hidden">
+        <div className="p-6 sm:p-8 lg:p-10">
+          <div className="border border-[#cbb8a3] rounded-sm overflow-hidden bg-[#f5f0e8]">
+            <img
+              src="/img/immagineHero.jpg"
+              alt="Raccoglitore Schema Therapy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
 
                 {/* badge Novità */}
                 <div className="absolute -bottom-4 left-10 bg-[#2d1f16] text-white px-4 py-2 text-xs uppercase tracking-wider">
