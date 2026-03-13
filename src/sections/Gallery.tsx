@@ -209,7 +209,7 @@ export function Gallery() {
 
       {/* Lightbox */}
       <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
-        <DialogContent className="max-w-4xl bg-[#2d1f16] border-[#5c4a3d] p-0 overflow-hidden">
+        <DialogContent className="max-w-5xl bg-[#2d1f16] border-[#5c4a3d] p-0 overflow-hidden">
           <button
             onClick={() => setSelectedItem(null)}
             className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
