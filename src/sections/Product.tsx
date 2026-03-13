@@ -159,12 +159,7 @@ export function Product() {
               ))}
             </div>
 
-            {/* Quality badge */}
-            <div className="mt-12 inline-flex items-center gap-4 px-6 py-3 bg-[#2d1f16] text-white">
-              <span className="text-xs uppercase tracking-wider">Formato DL</span>
-              <span className="w-px h-4 bg-white/20" />
-              <span className="text-sm">Cartoncino plastificato</span>
-            </div>
+            
           </div>
         </div>
       </div>
