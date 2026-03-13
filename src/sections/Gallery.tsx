@@ -9,7 +9,7 @@ const galleryItems = [
     title: 'Il Raccoglitore',
     size: 'large',
     position: 'left',
-    src: '/img/raccoglitoreChiuso.png',
+    src: '/img/raccoglitoreChiuso.jpg',
   },
   {
     id: 2,
