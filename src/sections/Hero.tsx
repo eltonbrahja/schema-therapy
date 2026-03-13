@@ -19,7 +19,7 @@ export function Hero() {
       ref={heroRef}
       className="relative min-h-screen flex items-center overflow-hidden bg-[#faf8f5]"
     >
-      {/* sfondo ecc... identico */}
+      {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div
           className={`absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-[#8b5a3c]/10 transition-all duration-1000 ${
@@ -37,7 +37,8 @@ export function Hero() {
         <div
           className="absolute inset-0 opacity-[0.015]"
           style={{
-            backgroundImage: `linear-gradient(#8b5a3c 1px, transparent 1px), linear-gradient(90deg, #8b5a3c 1px, transparent 1px)`,
+            backgroundImage:
+              'linear-gradient(#8b5a3c 1px, transparent 1px), linear-gradient(90deg, #8b5a3c 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
@@ -59,9 +60,9 @@ export function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* colonna sinistra */}
+          {/* Colonna sinistra */}
           <div className="order-2 lg:order-1">
-            {/* Badge SENZA icona */}
+            {/* Badge senza icona */}
             <div
               className={`inline-flex items-center px-4 py-2 bg-[#8b5a3c]/5 border border-[#8b5a3c]/10 rounded-full mb-8 transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -72,6 +73,7 @@ export function Hero() {
               </span>
             </div>
 
+            {/* Titolo */}
             <h1
               className={`font-display text-6xl sm:text-7xl lg:text-8xl text-[#2d1f16] mb-6 leading-[0.95] transition-all duration-700 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -81,6 +83,7 @@ export function Hero() {
               <span className="block italic text-[#8b5a3c]">Therapy</span>
             </h1>
 
+            {/* Testi */}
             <p
               className={`text-lg text-[#5c4a3d] max-w-md mb-3 font-light leading-relaxed transition-all duration-700 delay-200 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -99,6 +102,7 @@ export function Hero() {
               cartoncino plastificato.
             </p>
 
+            {/* CTA */}
             <div
               className={`flex flex-wrap gap-4 transition-all duration-700 delay-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -126,6 +130,7 @@ export function Hero() {
               </Button>
             </div>
 
+            {/* Stats */}
             <div
               className={`flex gap-12 mt-8 pt-8 border-t border-[#8b5a3c]/10 transition-all duration-700 delay-400 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -146,28 +151,32 @@ export function Hero() {
             </div>
           </div>
 
-          {/* colonna destra con immagine */}
+          {/* Colonna destra con immagine */}
           <div className="order-1 lg:order-2 relative">
             <div
               className={`relative transition-all duration-1000 delay-200 ${
-                isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
-              <div className="relative aspect-[4/5] max-w-md mx-auto lg:ml-auto">
-                {/* background card 1 */}
-                <div className="absolute inset-0 bg-[#c9b8a5] rounded-sm transform rotate-3 translate-x-4 translate-y-4" />
-                {/* background card 2 */}
-                <div className="absolute inset-0 bg-[#a67c52] rounded-sm transform -rotate-2 translate-x-2 translate-y-2" />
-                {/* card principale con immagine */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#f5f0e8] to-[#e8e0d5] rounded-sm shadow-2xl flex items-center justify-center p-4">
-                  <img
-                    src="/img/immagineHero.jpg"
-                    alt="Raccoglitore Schema Therapy"
-                    className="w-full h-full object-contain rounded-sm"
-                  />
+              <div className="relative max-w-lg mx-auto lg:ml-auto">
+                {/* singola “carta” dietro */}
+                <div className="absolute inset-0 translate-x-6 translate-y-8 rotate-2 bg-[#d0b9a0] rounded-sm shadow-xl" />
+
+                {/* tavola principale */}
+                <div className="relative bg-[#f5f0e8] rounded-sm shadow-[0_24px_60px_rgba(0,0,0,0.18)] overflow-hidden">
+                  <div className="p-6 sm:p-8">
+                    <div className="border border-[#cbb8a3] rounded-sm overflow-hidden bg-[#f5f0e8]">
+                      <img
+                        src="/img/immagineHero.jpg"
+                        alt="Raccoglitore Schema Therapy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="absolute -bottom-4 -left-4 bg-[#2d1f16] text-white px-4 py-2 text-xs uppercase tracking-wider">
+                {/* badge Novità */}
+                <div className="absolute -bottom-4 left-10 bg-[#2d1f16] text-white px-4 py-2 text-xs uppercase tracking-wider">
                   Novità
                 </div>
               </div>
@@ -176,6 +185,7 @@ export function Hero() {
         </div>
       </div>
 
+      {/* linea in basso */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5a3c]/20 to-transparent" />
     </section>
   );
