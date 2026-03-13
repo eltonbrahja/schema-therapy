@@ -221,14 +221,10 @@ export function Gallery() {
             <div className="bg-[#1a120e] flex flex-col items-center justify-center">
               <div className="w-full bg-[#1a120e] flex items-center justify-center p-6 sm:p-10">
                 <img
-  src={selectedItem.src}
-  alt={selectedItem.title}
-  className={`max-h-[70vh] rounded-xl shadow-2xl object-contain ${
-    selectedItem.title === 'Collezione'
-      ? 'w-full max-w-4xl'   // Collezione più larga
-      : 'w-auto max-w-sm'   // schede singole più strette
-  }`}
-/>
+                src={selectedItem.src}
+                alt={selectedItem.title}
+                className="max-h-[85vh] max-w-full h-auto w-auto rounded-xl shadow-2xl object-contain"
+                />
 
               </div>
               <div className="px-6 pb-6 text-center">
