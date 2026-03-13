@@ -7,9 +7,9 @@ import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 
 // costanti WhatsApp
-const WHATSAPP_NUMBER = '393401234567'; // metti il tuo numero
+const WHATSAPP_NUMBER = '39123456789'; // metti il tuo numero
 const WHATSAPP_TEXT = encodeURIComponent(
-  'Ciao, ho visto il raccoglitore Schema Therapy dal sito'
+  'Ciao, vorrei ulteriori informazioni riguardo al kit di Schema Therapy'
 );
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
 
