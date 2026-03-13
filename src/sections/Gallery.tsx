@@ -30,14 +30,14 @@ const galleryItems = [
     title: 'Dettaglio',
     size: 'small',
     position: 'center',
-    src: '/img/dettaglio.png', // cambia con il nome reale
+    src: '/img/dettaglio.png',
   },
   {
     id: 5,
     title: 'Collezione',
     size: 'large',
     position: 'right',
-    src: '/img/collezione.png', 
+    src: '/img/collezione.png',
   },
   {
     id: 6,
@@ -209,7 +209,13 @@ export function Gallery() {
 
       {/* Lightbox */}
       <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
-        <DialogContent className="max-w-5xl bg-[#2d1f16] border-[#5c4a3d] p-0 overflow-hidden">
+        <DialogContent
+          className="
+            w-full max-w-[95vw] sm:max-w-[95vw]
+            bg-[#2d1f16] border-[#5c4a3d]
+            p-0 overflow-hidden
+          "
+        >
           <button
             onClick={() => setSelectedItem(null)}
             className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
@@ -219,13 +225,16 @@ export function Gallery() {
 
           {selectedItem && (
             <div className="bg-[#1a120e] flex flex-col items-center justify-center">
-              <div className="w-full bg-[#1a120e] flex items-center justify-center p-6 sm:p-10">
+              <div className="w-full flex items-center justify-center p-4 sm:p-8">
                 <img
-                src={selectedItem.src}
-                alt={selectedItem.title}
-                className="max-h-[85vh] max-w-full h-auto w-auto rounded-xl shadow-2xl object-contain"
+                  src={selectedItem.src}
+                  alt={selectedItem.title}
+                  className="
+                    max-h-[85vh] max-w-[90vw]
+                    h-auto w-auto
+                    rounded-xl shadow-2xl object-contain
+                  "
                 />
-
               </div>
               <div className="px-6 pb-6 text-center">
                 <p className="font-display text-xl text-[#f5f0e8]">
