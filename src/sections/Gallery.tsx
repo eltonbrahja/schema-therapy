@@ -9,42 +9,42 @@ const galleryItems = [
     title: 'Il Raccoglitore',
     size: 'large',
     position: 'left',
-    src: '/img/raccoglitoreChiuso.jpg',
+    src: '/img/raccoglitoreChiuso.webp',
   },
   {
     id: 2,
     title: 'Scheda Fronte',
     size: 'medium',
     position: 'right',
-    src: '/img/NegIpercompensazione1.png',
+    src: '/img/NegIpercompensazione1.webp',
   },
   {
     id: 3,
     title: 'Scheda Retro',
     size: 'medium',
     position: 'left',
-    src: '/img/NegIpercompensazione2.png',
+    src: '/img/NegIpercompensazione2.webp',
   },
   {
     id: 4,
     title: 'Dettaglio',
     size: 'small',
     position: 'center',
-    src: '/img/fotoDettaglio.png',
+    src: '/img/fotoDettaglio.webp',
   },
   {
     id: 5,
     title: 'Collezione',
     size: 'large',
     position: 'right',
-    src: '/img/collezione.png',
+    src: '/img/collezione.webp',
   },
   {
     id: 6,
     title: 'In Uso',
     size: 'medium',
     position: 'left',
-    src: '/img/raccoglitoreAperto.png',
+    src: '/img/raccoglitoreAperto.webp',
   },
 ] as const;
 
@@ -79,9 +79,6 @@ export function Gallery() {
       id="galleria"
       className="py-32 lg:py-40 bg-[#2d1f16] relative overflow-hidden"
     >
-      {/* Anchor invisibile per lo scroll preciso */}
-      <div id="galleria-anchor" className="-mt-24 pt-24" />
-
       {/* Background pattern */}
       <div
         className="absolute inset-0 opacity-5"

@@ -163,7 +163,7 @@ export function Hero() {
         <div className="p-6 sm:p-8 lg:p-10">
           <div className="border border-[#cbb8a3] rounded-sm overflow-hidden bg-[#f5f0e8]">
             <img
-              src="/img/immagineHero.jpg"
+              src="/img/immagineHero.webp"
               alt="Raccoglitore Schema Therapy"
               className="w-full h-full object-cover"
             />
