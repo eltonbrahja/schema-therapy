@@ -1,13 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Check, Package, Truck, Shield, Mail, ArrowRight } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Check, Package, Truck, Shield, Mail, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const includedItems = [
-  'Raccoglitore professionale A4',
-  '18 schede teoriche dettagliate',
-  '54 immagini illustrative (3 per schema)',
-  'Cartoncino plastificato premium',
-  'Spedizione inclusa Italia',
+  "Raccoglitore professionale A4",
+  "18 schede teoriche dettagliate",
+  "54 immagini illustrative (3 per schema)",
+  "Cartoncino plastificato premium",
+  "Spedizione inclusa Italia",
 ];
 
 export function Pricing() {
@@ -33,9 +34,9 @@ export function Pricing() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="prezzo" 
+      id="prezzo"
       className="py-32 lg:py-40 bg-[#faf8f5] relative overflow-hidden"
     >
       {/* Background decoration */}
@@ -45,36 +46,36 @@ export function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <span 
+          <span
             className={`text-xs font-medium text-[#8b5a3c] tracking-[0.3em] uppercase block mb-4 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
             Acquista
           </span>
-          <h2 
+          <h2
             className={`font-display text-5xl sm:text-6xl lg:text-7xl text-[#2d1f16] leading-[0.95] mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             Prezzo &
             <span className="italic text-[#8b5a3c]"> Ordine</span>
           </h2>
-          <p 
+          <p
             className={`text-lg text-[#5c4a3d] max-w-2xl mx-auto transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Investi nella tua formazione professionale con un materiale didattico 
-            di alta qualità che utilizzerai per anni.
+            Investi nella tua formazione professionale con un materiale didattico
+            di alta qualità che utilizzerai per anni. [web:24]
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Pricing Card */}
-          <div 
+          <div
             className={`lg:col-span-3 transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
             <div className="relative bg-white p-8 lg:p-12 shadow-xl">
@@ -89,18 +90,22 @@ export function Pricing() {
                   Edizione Professionale
                 </p>
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-7xl lg:text-8xl text-[#2d1f16]">€180</span>
+                  <span className="font-display text-7xl lg:text-8xl text-[#2d1f16]">
+                    €180
+                  </span>
                   <span className="text-[#7a6555]">IVA inclusa</span>
                 </div>
               </div>
 
               <p className="text-[#5c4a3d] mb-8 leading-relaxed">
-                Prezzo completo per il raccoglitore Schema Therapy con tutto il contenuto. 
+                Prezzo completo per il raccoglitore Schema Therapy con tutto il contenuto.
                 Spedizione inclusa in tutta Italia.
               </p>
 
               <div className="space-y-4 mb-10">
-                <p className="text-xs text-[#7a6555] uppercase tracking-wider">Cosa include:</p>
+                <p className="text-xs text-[#7a6555] uppercase tracking-wider">
+                  Cosa include:
+                </p>
                 {includedItems.map((item, index) => (
                   <div key={index} className="flex items-center gap-4">
                     <div className="w-5 h-5 bg-[#8b5a3c] flex items-center justify-center flex-shrink-0">
@@ -111,14 +116,31 @@ export function Pricing() {
                 ))}
               </div>
 
+              {/* CTA principale: acquisto */}
               <Button
+                asChild
                 size="lg"
-                onClick={() => document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full bg-[#2d1f16] hover:bg-[#8b5a3c] text-white py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500 group"
+                className="w-full bg-[#2d1f16] hover:bg-[#8b5a3c] text-white py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500 group mb-3"
+              >
+                <Link to="/checkout">
+                  Procedi all&apos;acquisto
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+
+              {/* CTA secondaria: info, non colorata */}
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() =>
+                  document
+                    .getElementById("contatti")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="w-full border-[#2d1f16]/20 text-[#2d1f16] hover:bg-[#2d1f16] hover:text-white py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
               >
                 <Mail className="mr-2 w-4 h-4" />
-                Richiedi Informazioni
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Richiedi informazioni
               </Button>
 
               <p className="text-center text-xs text-[#7a6555] mt-4">
@@ -130,29 +152,29 @@ export function Pricing() {
           {/* Benefits */}
           <div className="lg:col-span-2 space-y-6">
             {[
-              { 
-                icon: Package, 
-                title: 'Prodotto Pronto', 
-                desc: 'Ricevi il raccoglitore completo e immediatamente utilizzabile',
-                delay: 400
+              {
+                icon: Package,
+                title: "Prodotto Pronto",
+                desc: "Ricevi il raccoglitore completo e immediatamente utilizzabile",
+                delay: 400,
               },
-              { 
-                icon: Truck, 
-                title: 'Spedizione Rapida', 
-                desc: 'Consegna in 3-5 giorni lavorativi in tutta Italia',
-                delay: 500
+              {
+                icon: Truck,
+                title: "Spedizione Rapida",
+                desc: "Consegna in 3-5 giorni lavorativi in tutta Italia",
+                delay: 500,
               },
-              { 
-                icon: Shield, 
-                title: 'Qualità Garantita', 
-                desc: 'Materiali selezionati per una durata nel tempo',
-                delay: 600
+              {
+                icon: Shield,
+                title: "Qualità Garantita",
+                desc: "Materiali selezionati per una durata nel tempo",
+                delay: 600,
               },
             ].map((benefit, index) => (
               <div
                 key={index}
                 className={`bg-white p-6 border-l-2 border-[#8b5a3c] transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                  isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
                 }`}
                 style={{ transitionDelay: `${benefit.delay}ms` }}
               >
@@ -167,13 +189,14 @@ export function Pricing() {
             ))}
 
             {/* Trust badge */}
-            <div 
+            <div
               className={`bg-[#2d1f16] text-white p-6 transition-all duration-700 delay-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <p className="text-sm text-center">
-                Materiale didattico utilizzato da psicologi e professionisti della salute mentale
+                Materiale didattico utilizzato da psicologi e professionisti della
+                salute mentale.
               </p>
             </div>
           </div>
