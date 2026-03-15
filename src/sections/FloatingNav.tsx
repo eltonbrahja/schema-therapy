@@ -15,7 +15,7 @@ const sections: Section[] = [
 ];
 
 
-const DEFAULT_OFFSET = 100; // distanza dal bordo alto al titolo, puoi regolare
+const DEFAULT_OFFSET = 90; // distanza dal bordo alto al titolo, puoi regolare
 
 function scrollToId(id: string, offset = DEFAULT_OFFSET) {
   const el = document.getElementById(id);
