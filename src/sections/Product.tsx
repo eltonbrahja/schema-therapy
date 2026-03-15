@@ -105,27 +105,26 @@ export function Product() {
             </p>
 
             <p
-  className={`text-lg text-[#5c4a3d] leading-relaxed transition-all duration-700 delay-300 ${
-    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-  }`}
->
-  Il presente lavoro raccoglie i 18 schemi maladattivi precoci, ciascuno
-  descritto in modo dettagliato con la definizione, l&apos;origine e i fattori
-  di sviluppo, il bisogno emotivo frustrato, la famiglia tipica, i pensieri
-  tipici, le emozioni frequenti e i comportamenti nell&apos;età adulta.
-</p>
+              className={`text-lg text-[#5c4a3d] leading-relaxed transition-all duration-700 delay-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              Il presente lavoro raccoglie i 18 schemi maladattivi precoci, ciascuno
+              descritto in modo dettagliato con la definizione, l&apos;origine e i fattori
+              di sviluppo, il bisogno emotivo frustrato, la famiglia tipica, i pensieri
+              tipici, le emozioni frequenti e i comportamenti nell&apos;età adulta.
+            </p>
 
-<p
-  className={`text-lg text-[#5c4a3d] leading-relaxed transition-all duration-700 delay-350 ${
-    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-  }`}
->
-  Per ogni schema vengono inoltre presentate le tipologie di presentazione,
-  la funzione dello schema, le strategie di coping maladattive, i modi tipici
-  attivati, cosa farebbe l&apos;Adulto Sano, i percorsi di cura e le frasi di
-  guarigione.
-</p>
-
+            <p
+              className={`text-lg text-[#5c4a3d] leading-relaxed transition-all duration-700 delay-350 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              Per ogni schema vengono inoltre presentate le tipologie di presentazione,
+              la funzione dello schema, le strategie di coping maladattive, i modi tipici
+              attivati, cosa farebbe l&apos;Adulto Sano, i percorsi di cura e le frasi di
+              guarigione.
+            </p>
           </div>
         </div>
 
@@ -163,7 +162,7 @@ export function Product() {
         >
           <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[#8b5a3c]/30 via-[#8b5a3c]/10 to-transparent" />
 
-          <div className="pl-8 lg:pl-16">
+          <div className="pl-4 sm:pl-8 lg:pl-16">
             <h3 className="font-display text-3xl lg:text-4xl text-[#2d1f16] mb-4">
               I 18 Schemi
               <span className="text-[#8b5a3c] italic"> Maladattivi</span>
@@ -173,7 +172,7 @@ export function Product() {
               illustrative che aiutano a comprendere e comunicare il concetto ai pazienti.
             </p>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-xl md:max-w-none mx-auto md:mx-0">
               {schemaList.flat().map((schema, index) => (
                 <div
                   key={index}
