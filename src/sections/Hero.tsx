@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowDownRight } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowDownRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +12,7 @@ export function Hero() {
   }, []);
 
   const scrollToProduct = () => {
-    document.getElementById('prodotto')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("prodotto")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -23,12 +24,12 @@ export function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <div
           className={`absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-[#8b5a3c]/10 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
           }`}
         />
         <div
           className={`absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full border border-[#8b5a3c]/5 transition-all duration-1000 delay-200 ${
-            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
           }`}
         />
         <div className="absolute top-1/4 left-[10%] w-3 h-3 bg-[#8b5a3c]/30 rounded-full animate-float" />
@@ -38,8 +39,8 @@ export function Hero() {
           className="absolute inset-0 opacity-[0.015]"
           style={{
             backgroundImage:
-              'linear-gradient(#8b5a3c 1px, transparent 1px), linear-gradient(90deg, #8b5a3c 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
+              "linear-gradient(#8b5a3c 1px, transparent 1px), linear-gradient(90deg, #8b5a3c 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
         <svg
@@ -62,10 +63,10 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Colonna sinistra */}
           <div className="order-2 lg:order-1">
-            {/* Badge senza icona */}
+            {/* Badge */}
             <div
               className={`inline-flex items-center px-4 py-2 bg-[#8b5a3c]/5 border border-[#8b5a3c]/10 rounded-full mb-8 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
               <span className="text-xs font-medium text-[#8b5a3c] tracking-widest uppercase">
@@ -76,7 +77,7 @@ export function Hero() {
             {/* Titolo */}
             <h1
               className={`font-display text-6xl sm:text-7xl lg:text-8xl text-[#2d1f16] mb-6 leading-[0.95] transition-all duration-700 delay-100 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Schema
@@ -86,7 +87,7 @@ export function Hero() {
             {/* Testi */}
             <p
               className={`text-lg text-[#5c4a3d] max-w-md mb-3 font-light leading-relaxed transition-all duration-700 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Un kit completo di Schema Therapy per psicologi e psicoterapeuti, con pagine
@@ -94,10 +95,10 @@ export function Hero() {
             </p>
             <p
               className={`text-lg text-[#5c4a3d] max-w-md mb-8 font-light leading-relaxed transition-all duration-700 delay-250 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="text-[#8b5a3c] font-medium">18 schemi</span> e
+              <span className="text-[#8b5a3c] font-medium">18 schemi</span>
               <span className="text-[#8b5a3c] font-medium"> 54 immagini</span> fronte-retro in
               cartoncino plastificato.
             </p>
@@ -105,35 +106,36 @@ export function Hero() {
             {/* CTA */}
             <div
               className={`flex flex-wrap gap-4 transition-all duration-700 delay-300 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
+              {/* Bottone principale → pagina acquisto */}
               <Button
-                onClick={scrollToProduct}
+                asChild
                 size="lg"
                 className="group bg-[#2d1f16] hover:bg-[#8b5a3c] text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
               >
-                Esplora il Contenuto
-                <ArrowDownRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+                <Link to="/checkout">
+                  Acquista il kit
+                  <ArrowDownRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+                </Link>
               </Button>
+
+              {/* Secondo bottone → scroll sezione prodotto */}
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() =>
-                  document
-                    .getElementById('contatti')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }
+                onClick={scrollToProduct}
                 className="border-[#2d1f16]/20 text-[#2d1f16] hover:bg-[#2d1f16] hover:text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
               >
-                Acquista il kit
+                Esplora il contenuto
               </Button>
             </div>
 
             {/* Stats */}
             <div
               className={`flex gap-12 mt-8 pt-8 border-t border-[#8b5a3c]/10 transition-all duration-700 delay-400 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <div>
@@ -149,27 +151,27 @@ export function Hero() {
 
           {/* Colonna destra con immagine */}
           <div className="order-1 lg:order-2 relative">
-  <div
-    className={`relative transition-all duration-1000 delay-200 ${
-      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-    }`}
-  >
-    <div className="relative max-w-xl lg:max-w-2xl mx-auto lg:ml-auto">
-      {/* carta dietro più ampia */}
-      <div className="absolute inset-0 translate-x-8 translate-y-10 rotate-2 bg-[#d0b9a0] rounded-sm shadow-2xl" />
+            <div
+              className={`relative transition-all duration-1000 delay-200 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
+              <div className="relative max-w-xl lg:max-w-2xl mx-auto lg:ml-auto">
+                {/* carta dietro */}
+                <div className="absolute inset-0 translate-x-8 translate-y-10 rotate-2 bg-[#d0b9a0] rounded-sm shadow-2xl" />
 
-      {/* tavola principale più grande */}
-      <div className="relative bg-[#f5f0e8] rounded-sm shadow-[0_28px_80px_rgba(0,0,0,0.22)] overflow-hidden">
-        <div className="p-6 sm:p-8 lg:p-10">
-          <div className="border border-[#cbb8a3] rounded-sm overflow-hidden bg-[#f5f0e8]">
-            <img
-              src="/img/immagineHero.webp"
-              alt="Raccoglitore Schema Therapy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </div>
+                {/* tavola principale */}
+                <div className="relative bg-[#f5f0e8] rounded-sm shadow-[0_28px_80px_rgba(0,0,0,0.22)] overflow-hidden">
+                  <div className="p-6 sm:p-8 lg:p-10">
+                    <div className="border border-[#cbb8a3] rounded-sm overflow-hidden bg-[#f5f0e8]">
+                      <img
+                        src="/img/immagineHero.webp"
+                        alt="Raccoglitore Schema Therapy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
 
                 {/* badge Novità */}
                 <div className="absolute -bottom-4 left-10 bg-[#2d1f16] text-white px-4 py-2 text-xs uppercase tracking-wider">
