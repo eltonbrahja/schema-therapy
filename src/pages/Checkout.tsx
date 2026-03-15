@@ -1,9 +1,14 @@
-// src/pages/Checkout.tsx
+import { useEffect } from "react";
 import { ExternalLink, Shield, Truck } from "lucide-react";
 
 function Checkout() {
   // TODO: sostituisci con l'URL ufficiale Amazon del kit
   const AMAZON_URL = "https://www.amazon.it/dp/TUO_ASIN";
+
+  useEffect(() => {
+    // quando arrivo sulla pagina parto sempre dall'alto
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleGoToAmazon = () => {
     window.open(AMAZON_URL, "_blank", "noopener,noreferrer");
@@ -12,40 +17,39 @@ function Checkout() {
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#2d1f16]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        {/* Header */}
+        {/* HEADER CENTRATO */}
         <header className="mb-14 text-center max-w-3xl mx-auto">
-  <p className="text-xs tracking-[0.3em] uppercase text-[#8b5a3c] mb-3">
-    Acquisto tramite Amazon
-  </p>
+          <p className="text-xs tracking-[0.3em] uppercase text-[#8b5a3c] mb-3">
+            Acquisto tramite Amazon
+          </p>
 
-  <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#2d1f16] leading-tight mb-4">
-    Completa l&apos;ordine
-    <span className="block italic text-[#8b5a3c]">
-      con pagamento protetto
-    </span>
-  </h1>
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#2d1f16] leading-tight mb-4">
+            Completa l&apos;ordine
+            <span className="block italic text-[#8b5a3c]">
+              con pagamento protetto
+            </span>
+          </h1>
 
-  <p className="text-sm sm:text-base text-[#5c4a3d] mx-auto max-w-2xl">
-    Utilizziamo la piattaforma di pagamento e spedizione di Amazon: 
-    paghi dal tuo account, in un ambiente sicuro e familiare, con 
-    consegna rapida e tracciata.
-  </p>
+          <p className="text-sm sm:text-base text-[#5c4a3d] mx-auto max-w-2xl">
+            Per questo kit utilizziamo la piattaforma di pagamento e spedizione
+            di Amazon. Paghi dal tuo account, in un ambiente sicuro e
+            familiare, con consegna rapida e tracciabile in tutta Italia.
+          </p>
 
-  <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#7a6555]">
-    <div className="flex items-center gap-2">
-      <Shield className="w-4 h-4 text-[#8b5a3c]" />
-      <span>Pagamento gestito da Amazon</span>
-    </div>
-    <div className="flex items-center gap-2">
-      <Truck className="w-4 h-4 text-[#8b5a3c]" />
-      <span>Spedizione veloce e tracciabile in tutta Italia</span>
-    </div>
-  </div>
-</header>
-
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#7a6555]">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-[#8b5a3c]" />
+              <span>Pagamento gestito da Amazon</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Truck className="w-4 h-4 text-[#8b5a3c]" />
+              <span>Spedizione veloce e tracciabile</span>
+            </div>
+          </div>
+        </header>
 
         <div className="grid lg:grid-cols-3 gap-10">
-          {/* Colonna sinistra: riepilogo + bottone ben visibile */}
+          {/* COLONNA SINISTRA: RIEPILOGO + BOTTONE */}
           <section className="lg:col-span-2 space-y-8">
             <div className="bg-white p-6 sm:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] relative">
               {/* Corner accents */}
@@ -84,13 +88,13 @@ function Checkout() {
                     <p>• Carte, addebito e altri metodi supportati da Amazon</p>
                   </div>
                   <div className="space-y-1">
-                    <p>• Spedizione rapida e tracciata sul territorio italiano</p>
+                    <p>• Spedizione rapida e tracciata in tutta Italia</p>
                     <p>• Gestione ordini e resi dal pannello &quot;I miei ordini&quot;</p>
                   </div>
                 </div>
               </div>
 
-              {/* Bottone grande, subito sotto al riepilogo */}
+              {/* BOTTONE PRINCIPALE */}
               <div className="mt-4">
                 <button
                   type="button"
@@ -101,30 +105,29 @@ function Checkout() {
                   <ExternalLink className="ml-2 w-4 h-4" />
                 </button>
                 <p className="text-[11px] text-[#7a6555] mt-3 text-center">
-                  Verrai indirizzato alla pagina ufficiale del kit su Amazon,
-                  dove potrai confermare quantità, indirizzo e metodo di
-                  pagamento prima di concludere l&apos;ordine.
+                  Dopo il clic verrai indirizzato alla pagina ufficiale del kit
+                  su Amazon, dove potrai confermare indirizzo, metodo di
+                  pagamento e quantità prima di completare l&apos;ordine.
                 </p>
               </div>
             </div>
 
             <p className="text-[11px] text-[#7a6555] text-center">
-              *Il prezzo e le modalità di spedizione sono sempre confermati
-              direttamente su Amazon al momento dell&apos;ordine.
+              *Il prezzo e le opzioni di spedizione sono sempre confermati
+              direttamente su Amazon al momento dell&apos;acquisto.
             </p>
           </section>
 
-          {/* Colonna destra: rassicurazioni eleganti */}
+          {/* COLONNA DESTRA: RASSICURAZIONI */}
           <aside className="space-y-6">
             <div className="bg-white p-5 shadow-[0_18px_50px_rgba(0,0,0,0.06)]">
-              <h3 className="font-display text-lg mb-2">
-                Pagamento sicuro
-              </h3>
+              <h3 className="font-display text-lg mb-2">Pagamento sicuro</h3>
               <p className="text-sm text-[#7a6555] leading-relaxed">
                 Non inserisci alcun dato di carta su questo sito. Il pagamento
-                avviene interamente su Amazon, che utilizza sistemi di
-                protezione avanzati e procedure di verifica delle transazioni
-                per tutelare sia te che il venditore.
+                avviene interamente su Amazon, con le stesse misure di
+                sicurezza che utilizzi per gli altri tuoi acquisti: sistemi
+                antifrode, verifica delle transazioni e protezione Acquisti
+                Amazon.
               </p>
             </div>
 
@@ -133,21 +136,20 @@ function Checkout() {
                 Spedizione tracciabile
               </h3>
               <p className="text-sm text-[#7a6555] leading-relaxed">
-                Una volta completato l&apos;ordine, potrai seguire tutte le fasi
-                della spedizione direttamente dal tuo account Amazon, con
-                notifiche sullo stato della consegna e tempi stimati sempre
-                aggiornati.
+                Una volta completato l&apos;ordine, potrai seguire ogni fase della
+                spedizione dalla sezione &quot;I miei ordini&quot; del tuo account
+                Amazon, con aggiornamenti sullo stato della consegna e tempi
+                stimati sempre visibili.
               </p>
             </div>
 
             <div className="bg-white p-5 shadow-[0_18px_50px_rgba(0,0,0,0.06)]">
               <h3 className="font-display text-lg mb-2">Assistenza</h3>
               <p className="text-sm text-[#7a6555] leading-relaxed">
-                Per chiarimenti sul contenuto del kit puoi contattarci a{" "}
-                <span className="font-medium">[tua email di supporto]</span>.
-                Per domande su consegna, resi o pagamenti puoi invece fare
-                riferimento alle sezioni di aiuto e assistenza clienti di
-                Amazon.
+                Per domande sul contenuto del kit puoi contattarci a{" "}
+                <span className="font-medium">[tua email di supporto]</span>. Per
+                questioni legate a pagamento, consegna o resi puoi invece usare
+                i canali di assistenza ufficiali di Amazon.
               </p>
             </div>
           </aside>
