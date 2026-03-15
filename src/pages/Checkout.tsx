@@ -13,36 +13,36 @@ function Checkout() {
     <main className="min-h-screen bg-[#faf8f5] text-[#2d1f16]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         {/* Header */}
-        <header className="mb-14 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-[#8b5a3c] mb-3">
-              Acquisto tramite Amazon
-            </p>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#2d1f16] leading-tight">
-              Completa l&apos;ordine
-              <span className="block italic text-[#8b5a3c]">
-                con pagamento protetto
-              </span>
-            </h1>
-            <p className="text-sm sm:text-base text-[#5c4a3d] mt-4 max-w-xl">
-              Per questo kit utilizziamo la piattaforma di pagamento e
-              spedizione di Amazon. Paghi dal tuo account, in un ambiente
-              sicuro e familiare, con consegna rapida e tracciata in tutta
-              Italia.
-            </p>
-          </div>
+        <header className="mb-14 text-center max-w-3xl mx-auto">
+  <p className="text-xs tracking-[0.3em] uppercase text-[#8b5a3c] mb-3">
+    Acquisto tramite Amazon
+  </p>
 
-          <div className="flex flex-col gap-3 text-xs text-[#7a6555]">
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-[#8b5a3c]" />
-              <span>Pagamento gestito da Amazon</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Truck className="w-4 h-4 text-[#8b5a3c]" />
-              <span>Spedizione veloce e tracciabile</span>
-            </div>
-          </div>
-        </header>
+  <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#2d1f16] leading-tight mb-4">
+    Completa l&apos;ordine
+    <span className="block italic text-[#8b5a3c]">
+      con pagamento protetto
+    </span>
+  </h1>
+
+  <p className="text-sm sm:text-base text-[#5c4a3d] mx-auto max-w-2xl">
+    Utilizziamo la piattaforma di pagamento e spedizione di Amazon: 
+    paghi dal tuo account, in un ambiente sicuro e familiare, con 
+    consegna rapida e tracciata in tutta Italia.
+  </p>
+
+  <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#7a6555]">
+    <div className="flex items-center gap-2">
+      <Shield className="w-4 h-4 text-[#8b5a3c]" />
+      <span>Pagamento gestito da Amazon</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <Truck className="w-4 h-4 text-[#8b5a3c]" />
+      <span>Spedizione veloce e tracciabile in tutta Italia</span>
+    </div>
+  </div>
+</header>
+
 
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Colonna sinistra: riepilogo + bottone ben visibile */}
