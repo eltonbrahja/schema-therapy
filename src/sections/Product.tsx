@@ -97,6 +97,36 @@ export function Product() {
               Un materiale didattico completo e professionale, pensato per accompagnarti 
               nella comprensione e nell'applicazione della Schema Therapy in contesto clinico.
             </p>
+
+            <p
+  className={`mt-4 text-sm text-[#5c4a3d] leading-relaxed transition-all duration-700 delay-250 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+  }`}
+>
+  Il presente lavoro raccoglie i 18 schemi maladattivi precoci, ciascuno
+  descritto in modo dettagliato con:
+</p>
+<ul
+  className={`mt-3 space-y-1 text-sm text-[#5c4a3d] leading-relaxed list-disc list-inside transition-all duration-700 delay-300 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+  }`}
+>
+  <li>Definizione</li>
+  <li>Origine e fattori di sviluppo</li>
+  <li>Bisogno emotivo frustrato</li>
+  <li>La famiglia tipica</li>
+  <li>Pensieri tipici</li>
+  <li>Emozioni frequenti</li>
+  <li>Comportamenti nell’età adulta</li>
+  <li>Tipologie di presentazione</li>
+  <li>Funzione dello schema</li>
+  <li>Strategie di coping maladattive</li>
+  <li>Modi tipici attivati</li>
+  <li>Cosa farebbe l’Adulto Sano</li>
+  <li>Percorsi di cura</li>
+  <li>Frasi di guarigione</li>
+</ul>
+
           </div>
         </div>
 
