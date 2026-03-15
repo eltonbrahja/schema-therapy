@@ -16,22 +16,21 @@ const sections: Section[] = [
 
 const DEFAULT_OFFSET = 20;
 
-// scroll centrato sulla sezione
+const DEFAULT_OFFSET = 100; // distanza dal bordo alto al titolo, puoi regolare
+
 function scrollToId(id: string, offset = DEFAULT_OFFSET) {
   const el = document.getElementById(id);
   if (!el) return;
 
   const rect = el.getBoundingClientRect();
-  const middle = rect.top + rect.height / 2;
-  const viewportMiddle = window.innerHeight / 2;
-
-  const top = middle + window.scrollY - viewportMiddle - offset;
+  const top = rect.top + window.scrollY - offset;
 
   window.scrollTo({
     top,
     behavior: 'smooth',
   });
 }
+
 
 export function FloatingNav() {
   const [active, setActive] = useState<string | null>('prodotto');
