@@ -126,7 +126,7 @@ export function Hero() {
                 }
                 className="border-[#2d1f16]/20 text-[#2d1f16] hover:bg-[#2d1f16] hover:text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
               >
-                Contattaci
+                Acquista il kit
               </Button>
             </div>
 
