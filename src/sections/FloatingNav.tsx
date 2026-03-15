@@ -14,7 +14,6 @@ const sections: Section[] = [
   { id: 'contatti', label: 'Contatti', offset: 20 },
 ];
 
-const DEFAULT_OFFSET = 20;
 
 const DEFAULT_OFFSET = 100; // distanza dal bordo alto al titolo, puoi regolare
 
