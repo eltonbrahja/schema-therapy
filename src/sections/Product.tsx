@@ -6,25 +6,29 @@ const features = [
     icon: Layers,
     number: '01',
     title: '18 Schemi',
-    description: 'Tutti gli schemi maladattivi fondamentali della Schema Therapy, completi di definizioni e origini.',
+    description:
+      'Tutti gli schemi maladattivi fondamentali della Schema Therapy, completi di definizioni e origini.',
   },
   {
     icon: Image,
     number: '02',
     title: '54 Immagini',
-    description: 'Tre immagini illustrative per ogni schema, stampate su cartoncino plastificato di alta qualità.',
+    description:
+      'Tre immagini illustrative per ogni schema, stampate su cartoncino plastificato di alta qualità.',
   },
   {
     icon: BookOpen,
     number: '03',
     title: 'Manuale Teorico',
-    description: 'Parte teorica dettagliata per ogni schema, con modalità di intervento clinico.',
+    description:
+      'Parte teorica dettagliata per ogni schema, con modalità di intervento clinico.',
   },
   {
     icon: Users,
     number: '04',
     title: 'Per Professionisti',
-    description: 'Ideale per psicologi in formazione ed esperti che vogliono approfondire.',
+    description:
+      'Ideale per psicologi in formazione ed esperti che vogliono approfondire.',
   },
 ];
 
@@ -60,26 +64,29 @@ export function Product() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="prodotto" 
+      id="prodotto"
       className="py-32 lg:py-40 bg-[#faf8f5] relative overflow-hidden"
     >
+      {/* Anchor invisibile per lo scroll preciso */}
+      <div id="prodotto-anchor" className="-mt-24 pt-24" />
+
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#f0ebe3]/50 to-transparent" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-24">
           <div>
-            <span 
+            <span
               className={`text-xs font-medium text-[#8b5a3c] tracking-[0.3em] uppercase block mb-4 transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
               Il Contenuto
             </span>
-            <h2 
+            <h2
               className={`font-display text-5xl sm:text-6xl lg:text-7xl text-[#2d1f16] leading-[0.95] transition-all duration-700 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
@@ -89,13 +96,14 @@ export function Product() {
             </h2>
           </div>
           <div className="flex items-end">
-            <p 
+            <p
               className={`text-lg text-[#5c4a3d] leading-relaxed transition-all duration-700 delay-200 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Un materiale didattico completo e professionale, pensato per accompagnarti 
-              nella comprensione e nell'applicazione della Schema Therapy in contesto clinico.
+              Un materiale didattico completo e professionale, pensato per accompagnarti
+              nella comprensione e nell&apos;applicazione della Schema Therapy in contesto
+              clinico.
             </p>
           </div>
         </div>
@@ -111,7 +119,9 @@ export function Product() {
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
               <div className="flex items-start justify-between mb-8">
-                <span className="text-xs text-[#c9b8a5] font-medium">{feature.number}</span>
+                <span className="text-xs text-[#c9b8a5] font-medium">
+                  {feature.number}
+                </span>
                 <feature.icon className="w-6 h-6 text-[#8b5a3c] group-hover:scale-110 transition-transform" />
               </div>
               <h3 className="font-display text-2xl text-[#2d1f16] mb-3 group-hover:text-[#8b5a3c] transition-colors">
@@ -125,20 +135,20 @@ export function Product() {
         </div>
 
         {/* Schema List Section */}
-        <div 
+        <div
           className={`relative transition-all duration-700 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}
         >
           <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[#8b5a3c]/30 via-[#8b5a3c]/10 to-transparent" />
-          
+
           <div className="pl-8 lg:pl-16">
             <h3 className="font-display text-3xl lg:text-4xl text-[#2d1f16] mb-4">
               I 18 Schemi
               <span className="text-[#8b5a3c] italic"> Maladattivi</span>
             </h3>
             <p className="text-[#5c4a3d] mb-12 max-w-2xl">
-              Ogni schema include una spiegazione teorica dettagliata e tre immagini 
+              Ogni schema include una spiegazione teorica dettagliata e tre immagini
               illustrative che aiutano a comprendere e comunicare il concetto ai pazienti.
             </p>
 
@@ -158,8 +168,6 @@ export function Product() {
                 </div>
               ))}
             </div>
-
-            
           </div>
         </div>
       </div>

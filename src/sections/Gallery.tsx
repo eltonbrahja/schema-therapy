@@ -79,6 +79,9 @@ export function Gallery() {
       id="galleria"
       className="py-32 lg:py-40 bg-[#2d1f16] relative overflow-hidden"
     >
+      {/* Anchor invisibile per lo scroll preciso */}
+      <div id="galleria-anchor" className="-mt-24 pt-24" />
+
       {/* Background pattern */}
       <div
         className="absolute inset-0 opacity-5"
