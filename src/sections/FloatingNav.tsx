@@ -1,17 +1,24 @@
 import { useEffect, useState } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 
-const sections = [
-  { id: 'prodotto', label: 'Prodotto' },
-  { id: 'galleria', label: 'Galleria' },
-  { id: 'pricing', label: 'Prezzo' },
-  { id: 'contatti', label: 'Contatti' },
+type Section = {
+  id: string;
+  label: string;
+  offset?: number;
+};
+
+const sections: Section[] = [
+  { id: 'prodotto', label: 'Prodotto', offset: 40 },
+  { id: 'galleria', label: 'Galleria', offset: 40 },
+  { id: 'prezzo',   label: 'Prezzo',   offset: 80 }, // id = "prezzo"
+  { id: 'contatti', label: 'Contatti', offset: 40 },
 ];
 
-function scrollToId(id: string) {
+const DEFAULT_OFFSET = 40;
+
+function scrollToId(id: string, offset = DEFAULT_OFFSET) {
   const el = document.getElementById(id);
   if (!el) return;
-  const offset = 80; // margine sotto la top bar
   const top = el.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({
     top,
@@ -35,7 +42,8 @@ export function FloatingNav() {
         });
       },
       {
-        threshold: 0.4,
+        threshold: 0.3,
+        rootMargin: '-20% 0px -60% 0px',
       }
     );
 
@@ -47,8 +55,9 @@ export function FloatingNav() {
     return () => observer.disconnect();
   }, []);
 
-  const handleClick = (id: string) => {
-    scrollToId(id);
+  const handleClick = (sec: Section) => {
+    setActive(sec.id); // feedback immediato
+    scrollToId(sec.id, sec.offset ?? DEFAULT_OFFSET);
     setMobileOpen(false);
   };
 
@@ -61,19 +70,25 @@ export function FloatingNav() {
           return (
             <button
               key={sec.id}
-              onClick={() => handleClick(sec.id)}
+              onClick={() => handleClick(sec)}
               className={`
                 group flex items-center gap-2 px-3 py-2 rounded-full
-                border transition-all duration-300
-                ${isActive
-                  ? 'bg-[#2d1f16] border-[#2d1f16] text-[#f5f0e8] shadow-lg shadow-black/20'
-                  : 'bg-[#f8f5f0]/90 border-[#cbb8a3] text-[#7a6555] hover:bg-white'}
+                border transition-all duration-300 ease-out
+                ${
+                  isActive
+                    ? 'bg-[#2d1f16] border-[#2d1f16] text-[#f5f0e8] shadow-lg shadow-black/20'
+                    : 'bg-[#f8f5f0]/90 border-[#cbb8a3] text-[#7a6555] hover:bg-white'
+                }
               `}
             >
               <span
                 className={`
                   w-2 h-2 rounded-full transition-colors
-                  ${isActive ? 'bg-[#f5f0e8]' : 'bg-[#cbb8a3] group-hover:bg-[#8b5a3c]'}
+                  ${
+                    isActive
+                      ? 'bg-[#f5f0e8]'
+                      : 'bg-[#cbb8a3] group-hover:bg-[#8b5a3c]'
+                  }
                 `}
               />
               <span className="text-[11px] font-medium tracking-[0.16em] uppercase">
@@ -84,8 +99,8 @@ export function FloatingNav() {
         })}
       </div>
 
-      {/* Mobile: pulsante espandibile in basso */}
-      <div className="md:hidden fixed bottom-6 right-6 z-40">
+      {/* Mobile: pulsante espandibile in basso, più alto per non toccare WhatsApp */}
+      <div className="md:hidden fixed bottom-24 right-6 z-40">
         <div className="flex flex-col items-end gap-2">
           {mobileOpen && (
             <div className="mb-2 rounded-2xl bg-[#f8f5f0] border border-[#cbb8a3] shadow-lg shadow-black/20 py-2 px-3">
@@ -94,7 +109,7 @@ export function FloatingNav() {
                 return (
                   <button
                     key={sec.id}
-                    onClick={() => handleClick(sec.id)}
+                    onClick={() => handleClick(sec)}
                     className={`
                       block w-full text-right py-1 text-[11px] uppercase tracking-[0.16em]
                       ${isActive ? 'text-[#2d1f16] font-semibold' : 'text-[#7a6555]'}
