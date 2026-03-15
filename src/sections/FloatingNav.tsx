@@ -20,35 +20,28 @@ const DEFAULT_OFFSET = -50; // distanza dal bordo alto al titolo, puoi regolare
 function scrollToId(id: string, offset = DEFAULT_OFFSET) {
   const el = document.getElementById(id);
   if (!el) return;
-
   const rect = el.getBoundingClientRect();
   const top = rect.top + window.scrollY - offset;
-
-  window.scrollTo({
-    top,
-    behavior: 'smooth',
-  });
+  window.scrollTo({ top, behavior: 'smooth' });
 }
 
-
 export function FloatingNav() {
-  const [active, setActive] = useState<string | null>('prodotto');
+  const [active, setActive] = useState<string>('prodotto');
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // evidenzia sezione attiva mentre scrolli
+  // QUI: aggiorna automaticamente la sezione attiva mentre scrolli
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            if (id) setActive(id);
-          }
+          if (!entry.isIntersecting) return;
+          const id = entry.target.getAttribute('id');
+          if (id) setActive(id);
         });
       },
       {
-        threshold: 0.3,
-        rootMargin: '-20% 0px -60% 0px',
+        rootMargin: '-40% 0px -60% 0px', // fascia centrale dello schermo
+        threshold: 0,
       }
     );
 
@@ -61,14 +54,14 @@ export function FloatingNav() {
   }, []);
 
   const handleClick = (sec: Section) => {
-    setActive(sec.id); // feedback immediato
-    scrollToId(sec.id, sec.offset ?? DEFAULT_OFFSET);
+    setActive(sec.id); // feedback immediato al click
+    scrollToId(sec.id);
     setMobileOpen(false);
   };
 
   return (
     <>
-      {/* Desktop / tablet pill laterale */}
+      {/* Desktop */}
       <div className="hidden md:flex fixed top-1/2 right-6 -translate-y-1/2 z-40 flex-col gap-3">
         {sections.map(sec => {
           const isActive = active === sec.id;
@@ -77,8 +70,8 @@ export function FloatingNav() {
               key={sec.id}
               onClick={() => handleClick(sec)}
               className={`
-                group flex items-center gap-2 px-3 py-2 rounded-full
-                border transition-all duration-300 ease-out
+                group flex items-center gap-2 px-3 py-2 rounded-full border
+                transition-all duration-300 ease-out
                 ${
                   isActive
                     ? 'bg-[#2d1f16] border-[#2d1f16] text-[#f5f0e8] shadow-lg shadow-black/20'
@@ -104,7 +97,7 @@ export function FloatingNav() {
         })}
       </div>
 
-      {/* Mobile: pulsante espandibile, più in alto per non toccare WhatsApp */}
+      {/* Mobile (rimane com’è, usa sempre active per il colore) */}
       <div className="md:hidden fixed bottom-24 right-6 z-40">
         <div className="flex flex-col items-end gap-2">
           {mobileOpen && (
@@ -129,18 +122,9 @@ export function FloatingNav() {
 
           <button
             onClick={() => setMobileOpen(o => !o)}
-            className="
-              w-11 h-11 rounded-full flex items-center justify-center
-              bg-[#2d1f16] text-[#f5f0e8] shadow-lg shadow-black/30
-              active:scale-95 transition
-            "
-            aria-label="Apri il menu di navigazione"
+            className="w-11 h-11 rounded-full flex items-center justify-center bg-[#2d1f16] text-[#f5f0e8] shadow-lg shadow-black/30 active:scale-95 transition"
           >
-            {mobileOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
