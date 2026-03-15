@@ -8,10 +8,10 @@ type Section = {
 };
 
 const sections: Section[] = [
-  { id: 'prodotto', label: 'Prodotto', offset: 0 },
-  { id: 'galleria', label: 'Galleria', offset: 0 },
-  { id: 'prezzo',   label: 'Prezzo',   offset: 0 },
-  { id: 'contatti', label: 'Contatti', offset: 0 },
+  { id: 'prodotto', label: 'Prodotto', offset: -20 },
+  { id: 'galleria', label: 'Galleria', offset: -20 },
+  { id: 'prezzo',   label: 'Prezzo',   offset: -20 },
+  { id: 'contatti', label: 'Contatti', offset: -20 },
 ];
 
 
