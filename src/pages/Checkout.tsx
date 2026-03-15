@@ -28,7 +28,7 @@ function Checkout() {
   <p className="text-sm sm:text-base text-[#5c4a3d] mx-auto max-w-2xl">
     Utilizziamo la piattaforma di pagamento e spedizione di Amazon: 
     paghi dal tuo account, in un ambiente sicuro e familiare, con 
-    consegna rapida e tracciata in tutta Italia.
+    consegna rapida e tracciata.
   </p>
 
   <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#7a6555]">
