@@ -105,7 +105,7 @@ export function Footer() {
               </a>
               <span className="text-[#2d1f16]">•</span>
               <a
-                href="/acquista"
+                href="/checkout"
                 className="text-[#7a6555] hover:text-[#c9b8a5] transition-colors"
               >
                 Acquista
