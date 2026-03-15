@@ -144,10 +144,6 @@ export function Hero() {
                 <p className="font-display text-4xl text-[#8b5a3c]">54</p>
                 <p className="text-xs text-[#7a6555] uppercase tracking-wider mt-1">Immagini</p>
               </div>
-              <div>
-                <p className="font-display text-4xl text-[#8b5a3c]">€---</p>
-                <p className="text-xs text-[#7a6555] uppercase tracking-wider mt-1">Prezzo</p>
-              </div>
             </div>
           </div>
 
