@@ -16,7 +16,7 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#f8f5f0]">
+    <div id="top" className="min-h-screen bg-[#f8f5f0]">
       <Hero />
       <Product />
       <Gallery />
@@ -49,27 +49,11 @@ function App() {
         </svg>
       </a>
 
-      <Toaster position="top-center" />
-    </div>
-  );
-}
-
-
-
-function App() {
-  return (
-    <div id="top" className="min-h-screen bg-[#f8f5f0]">
-      <Hero />
-      <Product />
-      <Gallery />
-      <Pricing />
-      <Contact />
-      <Footer />
+      {/* floating nav + toaster */}
       <FloatingNav />
       <Toaster position="top-center" />
     </div>
   );
 }
-
 
 export default App;
