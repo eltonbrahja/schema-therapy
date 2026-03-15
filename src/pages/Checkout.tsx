@@ -195,6 +195,19 @@ function Checkout() {
               </p>
             </div>
           </aside>
+
+          <p className="text-center text-[11px] text-[#7a6555] mt-2">
+  Preferisci Amazon?{" "}
+  <a
+    href="https://www.amazon.it/dp/[TUO_ISBN_O_ASIN]"
+    target="_blank"
+    rel="noreferrer"
+    className="underline decoration-[#8b5a3c] underline-offset-2"
+  >
+    Acquista il kit su Amazon
+  </a>
+</p>
+
         </div>
       </div>
     </main>
