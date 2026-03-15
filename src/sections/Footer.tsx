@@ -21,19 +21,25 @@ export function Footer() {
                 <BookOpen className="w-5 h-5 text-[#a67c52]" />
               </div>
               <div>
-                <span className="font-display text-xl text-[#f5f0e8]">Schema Therapy</span>
-                <span className="block text-[10px] text-[#7a6555] uppercase tracking-wider">Edizione Professionale</span>
+                <span className="font-display text-xl text-[#f5f0e8]">
+                  Schema Therapy
+                </span>
+                <span className="block text-[10px] text-[#7a6555] uppercase tracking-wider">
+                  Edizione Professionale
+                </span>
               </div>
             </div>
             <p className="text-[#7a6555] text-sm leading-relaxed max-w-md">
-              Materiale didattico professionale per psicologi e professionisti 
+              Materiale didattico professionale per psicologi e professionisti
               della salute mentale. 18 schemi, 54 immagini, qualità garantita.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="text-xs text-[#7a6555] uppercase tracking-wider mb-4">Navigazione</p>
+            <p className="text-xs text-[#7a6555] uppercase tracking-wider mb-4">
+              Navigazione
+            </p>
             <ul className="space-y-3">
               {navLinks.map((link, index) => (
                 <li key={index}>
@@ -51,15 +57,23 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-xs text-[#7a6555] uppercase tracking-wider mb-4">Contatti</p>
+            <p className="text-xs text-[#7a6555] uppercase tracking-wider mb-4">
+              Contatti
+            </p>
             <div className="space-y-3 text-sm">
               <p>
-                <a href="mailto:info@schematherapy.it" className="text-[#c9b8a5] hover:text-[#a67c52] transition-colors">
+                <a
+                  href="mailto:info@schematherapy.it"
+                  className="text-[#c9b8a5] hover:text-[#a67c52] transition-colors"
+                >
                   info@schematherapy.it
                 </a>
               </p>
               <p>
-                <a href="tel:+391234567890" className="text-[#c9b8a5] hover:text-[#a67c52] transition-colors">
+                <a
+                  href="tel:+391234567890"
+                  className="text-[#c9b8a5] hover:text-[#a67c52] transition-colors"
+                >
                   +39 123 456 7890
                 </a>
               </p>
@@ -74,10 +88,34 @@ export function Footer() {
             <p className="text-[#5c4a3d] text-xs">
               {currentYear} Schema Therapy. Tutti i diritti riservati.
             </p>
-            <p className="text-[#5c4a3d] text-xs">
-              Design per la formazione psicologica
-            </p>
+
+            <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.16em]">
+              <a
+                href="/privacy"
+                className="text-[#7a6555] hover:text-[#c9b8a5] transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <span className="text-[#2d1f16]">•</span>
+              <a
+                href="/cookie"
+                className="text-[#7a6555] hover:text-[#c9b8a5] transition-colors"
+              >
+                Cookie Policy
+              </a>
+              <span className="text-[#2d1f16]">•</span>
+              <a
+                href="/acquista"
+                className="text-[#7a6555] hover:text-[#c9b8a5] transition-colors"
+              >
+                Acquista
+              </a>
+            </div>
           </div>
+
+          <p className="mt-3 text-[#5c4a3d] text-[11px]">
+            Design per la formazione psicologica
+          </p>
         </div>
       </div>
     </footer>
