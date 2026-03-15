@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 type Section = {
   id: string;
@@ -8,18 +8,25 @@ type Section = {
 };
 
 const sections: Section[] = [
-  { id: 'prodotto', label: 'Prodotto', offset: 40 },
-  { id: 'galleria', label: 'Galleria', offset: 40 },
-  { id: 'prezzo',   label: 'Prezzo',   offset: 80 }, // id = "prezzo"
-  { id: 'contatti', label: 'Contatti', offset: 40 },
+  { id: 'prodotto', label: 'Prodotto', offset: 20 },
+  { id: 'galleria', label: 'Galleria', offset: 20 },
+  { id: 'prezzo',   label: 'Prezzo',   offset: 40 },
+  { id: 'contatti', label: 'Contatti', offset: 20 },
 ];
 
-const DEFAULT_OFFSET = 40;
+const DEFAULT_OFFSET = 20;
 
+// scroll centrato sulla sezione
 function scrollToId(id: string, offset = DEFAULT_OFFSET) {
   const el = document.getElementById(id);
   if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+
+  const rect = el.getBoundingClientRect();
+  const middle = rect.top + rect.height / 2;
+  const viewportMiddle = window.innerHeight / 2;
+
+  const top = middle + window.scrollY - viewportMiddle - offset;
+
   window.scrollTo({
     top,
     behavior: 'smooth',
@@ -99,11 +106,11 @@ export function FloatingNav() {
         })}
       </div>
 
-      {/* Mobile: pulsante espandibile in basso, più alto per non toccare WhatsApp */}
+      {/* Mobile: pulsante espandibile, più in alto per non toccare WhatsApp */}
       <div className="md:hidden fixed bottom-24 right-6 z-40">
         <div className="flex flex-col items-end gap-2">
           {mobileOpen && (
-            <div className="mb-2 rounded-2xl bg-[#f8f5f0] border border-[#cbb8a3] shadow-lg shadow-black/20 py-2 px-3">
+            <div className="mb-3 rounded-2xl bg-[#f8f5f0] border border-[#cbb8a3] shadow-lg shadow-black/20 py-3 px-4">
               {sections.map(sec => {
                 const isActive = active === sec.id;
                 return (
@@ -111,7 +118,7 @@ export function FloatingNav() {
                     key={sec.id}
                     onClick={() => handleClick(sec)}
                     className={`
-                      block w-full text-right py-1 text-[11px] uppercase tracking-[0.16em]
+                      block w-full text-right py-2 text-[12px] uppercase tracking-[0.18em]
                       ${isActive ? 'text-[#2d1f16] font-semibold' : 'text-[#7a6555]'}
                     `}
                   >
@@ -132,9 +139,9 @@ export function FloatingNav() {
             aria-label="Apri il menu di navigazione"
           >
             {mobileOpen ? (
-              <ChevronDown className="w-5 h-5" />
+              <X className="w-5 h-5" />
             ) : (
-              <ChevronUp className="w-5 h-5" />
+              <Menu className="w-5 h-5" />
             )}
           </button>
         </div>
