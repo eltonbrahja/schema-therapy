@@ -104,32 +104,27 @@ export function Product() {
               clinico.
             </p>
 
-            <div
-              className={`border-l-2 border-[#8b5a3c]/40 pl-4 text-sm text-[#5c4a3d] leading-relaxed transition-all duration-700 delay-300 ${
+            <p
+              className={`text-sm text-[#7a6555] leading-relaxed transition-all duration-700 delay-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <p className="mb-2">
-                Il presente lavoro raccoglie i 18 schemi maladattivi precoci, ciascuno
-                descritto in modo dettagliato con:
-              </p>
-              <ul className="space-y-1 list-disc list-inside">
-                <li>Definizione</li>
-                <li>Origine e fattori di sviluppo</li>
-                <li>Bisogno emotivo frustrato</li>
-                <li>La famiglia tipica</li>
-                <li>Pensieri tipici</li>
-                <li>Emozioni frequenti</li>
-                <li>Comportamenti nell’età adulta</li>
-                <li>Tipologie di presentazione</li>
-                <li>Funzione dello schema</li>
-                <li>Strategie di coping maladattive</li>
-                <li>Modi tipici attivati</li>
-                <li>Cosa farebbe l’Adulto Sano</li>
-                <li>Percorsi di cura</li>
-                <li>Frasi di guarigione</li>
-              </ul>
-            </div>
+              Il presente lavoro raccoglie i 18 schemi maladattivi precoci, ciascuno
+              descritto in modo dettagliato: dalla definizione all&apos;origine e ai fattori
+              di sviluppo, dai bisogni emotivi frustrati alla famiglia tipica, fino ai
+              pensieri, alle emozioni e ai comportamenti più frequenti nell&apos;età adulta.
+            </p>
+
+            <p
+              className={`text-sm text-[#7a6555] leading-relaxed transition-all duration-700 delay-350 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              Per ogni schema vengono inoltre presentate le principali tipologie di
+              presentazione e la funzione dello schema, le strategie di coping
+              maladattive e i modi tipici attivati, insieme a ciò che farebbe l&apos;Adulto
+              Sano, ai possibili percorsi di cura e a specifiche frasi di guarigione.
+            </p>
           </div>
         </div>
 
