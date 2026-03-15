@@ -30,7 +30,7 @@ const galleryItems = [
     title: 'Dettaglio',
     size: 'small',
     position: 'center',
-    src: '/img/dettaglio.png',
+    src: '/img/fotoDettaglio.png',
   },
   {
     id: 5,
