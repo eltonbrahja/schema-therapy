@@ -5,6 +5,7 @@ import { Gallery } from './sections/Gallery';
 import { Pricing } from './sections/Pricing';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
+import { FloatingNav } from './sections/FloatingNav';
 
 // costanti WhatsApp
 const WHATSAPP_NUMBER = '39123456789'; // metti il tuo numero
@@ -52,5 +53,23 @@ function App() {
     </div>
   );
 }
+
+
+
+function App() {
+  return (
+    <div id="top" className="min-h-screen bg-[#f8f5f0]">
+      <Hero />
+      <Product />
+      <Gallery />
+      <Pricing />
+      <Contact />
+      <Footer />
+      <FloatingNav />
+      <Toaster position="top-center" />
+    </div>
+  );
+}
+
 
 export default App;
