@@ -1,4 +1,5 @@
-export function Cookie() {
+// src/pages/Cookie.tsx
+function Cookie() {
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#2d1f16]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
@@ -12,11 +13,11 @@ export function Cookie() {
           </h1>
           <p className="text-sm text-[#5c4a3d] max-w-2xl">
             La presente informativa descrive l&apos;utilizzo dei cookie e di altri
-            strumenti di tracciamento sul sito{' '}
+            strumenti di tracciamento sul sito{" "}
             <span className="font-medium">schematherapy.shop</span>, in conformità
             al Regolamento (UE) 2016/679 (&quot;GDPR&quot;) e alle Linee guida
             del Garante per la protezione dei dati personali in materia di cookie e
-            altri strumenti di tracciamento (provvedimento 10.06.2021). [web:109][web:112]
+            altri strumenti di tracciamento (provvedimento 10.06.2021).
           </p>
         </header>
 
@@ -33,7 +34,7 @@ export function Cookie() {
               permettono al sito di funzionare in modo efficiente e di migliorare
               l&apos;esperienza di navigazione, nonché di raccogliere informazioni,
               in forma aggregata o meno, sul numero degli utenti e su come il sito
-              viene utilizzato. [web:110][web:115]
+              viene utilizzato.
             </p>
           </section>
 
@@ -47,7 +48,7 @@ export function Cookie() {
             </p>
             <ul className="list-disc list-inside space-y-1 mb-2">
               <li>
-                <span className="font-medium">Cookie tecnici (necessari)</span>:
+                <span className="font-medium">Cookie tecnici (necessari)</span>:{" "}
                 sono indispensabili per il corretto funzionamento del sito e per
                 consentire la navigazione e l&apos;utilizzo delle sue funzionalità
                 (ad es. gestione della sessione, salvataggio delle preferenze di
@@ -63,14 +64,14 @@ export function Cookie() {
                 provenienza). Quando sono configurati in modo da non consentire la
                 identificazione dell&apos;utente (es. IP anonimizzato, dati aggregati),
                 possono essere equiparati ai cookie tecnici; diversamente richiedono
-                il consenso dell&apos;utente. [web:113][web:115]
+                il consenso dell&apos;utente.
               </li>
               <li>
                 <span className="font-medium">Cookie di profilazione</span> (se
                 presenti): sono volti a creare profili relativi all&apos;utente e
                 vengono utilizzati per inviare messaggi pubblicitari in linea con le
                 preferenze manifestate nell&apos;ambito della navigazione in rete.
-                Questo sito, allo stato attuale,{' '}
+                Questo sito, allo stato attuale,{" "}
                 <span className="font-medium">
                   [non utilizza / utilizza] cookie di profilazione
                 </span>
@@ -137,7 +138,7 @@ export function Cookie() {
               Le preferenze espresse tramite il banner sono registrate mediante un
               apposito cookie tecnico e non verranno richieste nuovamente per almeno
               6 mesi, salvo che cambino in modo significativo le condizioni del
-              trattamento o l&apos;utente cancelli i cookie dal proprio browser. [web:100][web:116]
+              trattamento o l&apos;utente cancelli i cookie dal proprio browser.
             </p>
           </section>
 
@@ -210,7 +211,7 @@ export function Cookie() {
               In qualità di interessato, l&apos;utente può esercitare i diritti previsti
               dagli artt. 15–22 del GDPR (accesso, rettifica, cancellazione,
               limitazione, opposizione, portabilità, reclamo al Garante), secondo
-              quanto indicato nella{' '}
+              quanto indicato nella{" "}
               <a
                 href="/privacy"
                 className="underline decoration-[#8b5a3c] underline-offset-2"
@@ -242,3 +243,5 @@ export function Cookie() {
     </main>
   );
 }
+
+export default Cookie;
