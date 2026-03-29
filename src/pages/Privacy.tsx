@@ -26,7 +26,7 @@ function Privacy() {
             (&quot;GDPR&quot;) e della normativa nazionale applicabile in materia di
             protezione dei dati personali, e descrive le modalità di trattamento
             dei dati personali degli utenti che visitano il sito{" "}
-            <span className="font-medium">schematherapy.shop</span>. [web:19][web:24]
+            <span className="font-medium">schematherapy.shop</span>.
           </p>
         </header>
 
@@ -41,7 +41,7 @@ function Privacy() {
               <span className="font-medium">[Nome e Cognome / Ragione sociale]</span>, 
               con sede in <span className="font-medium">[indirizzo completo]</span>, 
               e contattabile all&apos;indirizzo e-mail{" "}
-              <span className="font-medium">[indirizzo email di contatto]</span>. [web:22][web:24]
+              <span className="font-medium">[indirizzo email di contatto]</span>. 
             </p>
           </section>
 
@@ -52,7 +52,7 @@ function Privacy() {
             </h2>
             <p className="mb-2">
               Attraverso il sito possono essere raccolte e trattate le seguenti
-              categorie di dati personali: [web:20][web:24]
+              categorie di dati personali:
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li>
@@ -60,19 +60,19 @@ function Privacy() {
                 IP, informazioni sul dispositivo, dati relativi alle sessioni e
                 alla navigazione (log), raccolti in forma automatizzata e
                 aggregata per il funzionamento del sito e per finalità di
-                sicurezza. [web:25]
+                sicurezza.
               </li>
               <li>
                 <span className="font-medium">Dati forniti volontariamente</span>: 
                 dati identificativi e di contatto (ad es. nome, cognome, e-mail, 
                 numero di telefono) forniti tramite moduli di contatto, form di 
-                richiesta informazioni o procedura di acquisto. [web:24]
+                richiesta informazioni o procedura di acquisto.
               </li>
               <li>
                 <span className="font-medium">Dati relativi agli acquisti</span>: 
                 informazioni relative ai prodotti acquistati, importi, eventuali 
                 dati di fatturazione; i dati di pagamento sono trattati tramite 
-                provider terzi e non vengono archiviati direttamente sul sito. [web:24]
+                provider terzi e non vengono archiviati direttamente sul sito.
               </li>
               <li>
                 <span className="font-medium">Cookie e strumenti di tracciamento</span>: 
@@ -83,7 +83,7 @@ function Privacy() {
                 >
                   Cookie Policy
                 </a>
-                . [web:28][web:31]
+                .
               </li>
             </ul>
           </section>
@@ -95,7 +95,7 @@ function Privacy() {
             </h2>
             <p className="mb-2">
               I dati personali raccolti tramite il sito sono trattati per le
-              seguenti finalità e sulla base delle relative basi giuridiche. [web:24]
+              seguenti finalità e sulla base delle relative basi giuridiche. 
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li>
@@ -104,7 +104,7 @@ function Privacy() {
                 </span>{" "}
                 consentire il corretto funzionamento del sito, monitorarne la
                 sicurezza e le prestazioni. Base giuridica: legittimo interesse
-                del Titolare. [web:24][web:25]
+                del Titolare. 
               </li>
               <li>
                 <span className="font-medium">
@@ -113,7 +113,7 @@ function Privacy() {
                 rispondere a richieste di informazioni, preventivi o supporto
                 inviate tramite i form presenti sul sito. Base giuridica:
                 esecuzione di misure precontrattuali adottate su richiesta
-                dell&apos;interessato. [web:24]
+                dell&apos;interessato. 
               </li>
               <li>
                 <span className="font-medium">
@@ -122,7 +122,7 @@ function Privacy() {
                 permettere la conclusione ed esecuzione di contratti di
                 acquisto, adempiere a obblighi amministrativi, contabili e
                 fiscali. Base giuridica: esecuzione di un contratto e obblighi
-                di legge. [web:24]
+                di legge. 
               </li>
               <li>
                 <span className="font-medium">
@@ -131,11 +131,11 @@ function Privacy() {
                 invio di comunicazioni informative e promozionali via e-mail o
                 altri canali sui prodotti e servizi del Titolare. Base
                 giuridica: consenso dell&apos;interessato, liberamente
-                revocabile. [web:19][web:23]
+                revocabile. 
               </li>
               <li>
                 <span className="font-medium">Adempimento di obblighi legali</span>: 
-                ottemperare agli obblighi previsti da leggi e regolamenti. [web:24]
+                ottemperare agli obblighi previsti da leggi e regolamenti.
               </li>
             </ul>
           </section>
@@ -149,12 +149,12 @@ function Privacy() {
               I dati personali sono trattati con strumenti elettronici e, in
               casi limitati, anche manuali, secondo principi di liceità,
               correttezza, trasparenza, minimizzazione e limitazione della
-              conservazione. [web:20][web:24]
+              conservazione.
             </p>
             <p className="mb-2">
               I dati sono conservati per il tempo strettamente necessario al
               conseguimento delle finalità per le quali sono stati raccolti e
-              comunque nel rispetto dei termini di legge applicabili. [web:24]
+              comunque nel rispetto dei termini di legge applicabili.
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li>
@@ -170,7 +170,7 @@ function Privacy() {
               <li>
                 dati trattati per finalità di marketing: fino alla revoca del
                 consenso o, in mancanza, per un periodo massimo di{" "}
-                <span className="font-medium">[es. 24 mesi]</span>. [web:19][web:24]
+                <span className="font-medium">[es. 24 mesi]</span>.
               </li>
             </ul>
           </section>
@@ -185,13 +185,13 @@ function Privacy() {
               operano, in qualità di responsabili del trattamento o autonomi
               titolari, quali fornitori di servizi tecnici e di hosting,
               provider di pagamento, consulenti fiscali e legali, piattaforme
-              di invio newsletter e comunicazioni commerciali. [web:24][web:25]
+              di invio newsletter e comunicazioni commerciali.
             </p>
             <p className="mt-2">
               Qualora il trasferimento dei dati avvenga verso paesi extra UE/SEE,
               esso sarà effettuato nel rispetto degli artt. 44 ss. GDPR,
               adottando le garanzie adeguate (decisioni di adeguatezza, clausole
-              contrattuali standard, ecc.). [web:23][web:26]
+              contrattuali standard, ecc.). 
             </p>
           </section>
 
@@ -204,12 +204,12 @@ function Privacy() {
               In qualità di interessato, l&apos;utente può esercitare in qualsiasi
               momento i diritti riconosciuti dagli artt. 15–22 GDPR (accesso,
               rettifica, cancellazione, limitazione, opposizione, portabilità,
-              reclamo all&apos;Autorità Garante). [web:30]
+              reclamo all&apos;Autorità Garante). 
             </p>
             <p>
               Per esercitare i propri diritti è possibile contattare il Titolare
               all&apos;indirizzo e-mail{" "}
-              <span className="font-medium">[indirizzo email di contatto]</span>. [web:24]
+              <span className="font-medium">[indirizzo email di contatto]</span>. 
             </p>
           </section>
 
@@ -223,10 +223,10 @@ function Privacy() {
               tempo, anche in relazione a modifiche normative o a cambiamenti nei
               trattamenti effettuati. Le modifiche saranno pubblicate su questa
               pagina e, se rilevanti, potranno essere comunicate agli utenti
-              attraverso i canali appropriati. [web:19][web:25]
+              attraverso i canali appropriati. 
             </p>
             <p className="mt-2 text-xs text-[#7a6555]">
-              Ultimo aggiornamento: [data].
+              Ultimo aggiornamento: 29/03/2026
             </p>
           </section>
         </div>

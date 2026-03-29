@@ -67,7 +67,7 @@ export function Pricing() {
             }`}
           >
             Investi nella tua formazione professionale con un materiale didattico
-            di alta qualità che utilizzerai per anni. [web:24]
+            di alta qualità che utilizzerai per anni. 
           </p>
         </div>
 

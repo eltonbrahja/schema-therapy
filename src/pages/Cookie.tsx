@@ -27,7 +27,7 @@ function Cookie() {
             <span className="font-medium">schematherapy.shop</span>, in conformità
             al Regolamento (UE) 2016/679 (&quot;GDPR&quot;) e alle Linee guida
             del Garante per la protezione dei dati personali in materia di cookie e
-            altri strumenti di tracciamento (provvedimento 10.06.2021). [web:30]
+            altri strumenti di tracciamento (provvedimento 10.06.2021). 
           </p>
         </header>
 
@@ -44,7 +44,7 @@ function Cookie() {
               permettono al sito di funzionare in modo efficiente e di migliorare
               l&apos;esperienza di navigazione, nonché di raccogliere informazioni,
               in forma aggregata o meno, sul numero degli utenti e su come il sito
-              viene utilizzato. [web:28][web:31]
+              viene utilizzato. 
             </p>
           </section>
 
@@ -54,7 +54,7 @@ function Cookie() {
               2. Tipologie di cookie utilizzati dal sito
             </h2>
             <p className="mb-2">
-              Il presente sito utilizza le seguenti categorie di cookie: [web:28]
+              Il presente sito utilizza le seguenti categorie di cookie: 
             </p>
             <ul className="list-disc list-inside space-y-1 mb-2">
               <li>
@@ -64,7 +64,7 @@ function Cookie() {
                 (ad es. gestione della sessione, salvataggio delle preferenze di
                 consenso ai cookie). Non richiedono il consenso dell&apos;utente e
                 sono installati automaticamente al momento dell&apos;accesso al sito.
-                [web:28][web:31]
+                
               </li>
               <li>
                 <span className="font-medium">
@@ -75,7 +75,7 @@ function Cookie() {
                 provenienza). Quando sono configurati in modo da non consentire la
                 identificazione dell&apos;utente (es. IP anonimizzato, dati aggregati),
                 possono essere equiparati ai cookie tecnici; diversamente richiedono
-                il consenso dell&apos;utente. [web:28][web:31]
+                il consenso dell&apos;utente. 
               </li>
               <li>
                 <span className="font-medium">Cookie di profilazione</span> (se
@@ -87,14 +87,14 @@ function Cookie() {
                   [non utilizza / utilizza] cookie di profilazione
                 </span>
                 . In caso di utilizzo, tali cookie vengono installati solo previo
-                consenso esplicito dell&apos;utente. [web:28][web:31]
+                consenso esplicito dell&apos;utente.
               </li>
             </ul>
             <p className="mt-2">
               L&apos;elenco aggiornato e dettagliato dei cookie effettivamente utilizzati
               (nome, tipo, durata, finalità e provenienza) dovrebbe essere
               riportato in una tabella specifica, sulla base della configurazione
-              tecnica effettiva del sito. [web:28]
+              tecnica effettiva del sito. 
             </p>
           </section>
 
@@ -109,7 +109,7 @@ function Cookie() {
               piattaforme di pagamento, strumenti di marketing). In tal caso, tali
               terze parti agiscono come autonomi titolari o come responsabili del
               trattamento, secondo quanto indicato nelle rispettive informative,
-              alle quali si rinvia. [web:28][web:31]
+              alle quali si rinvia.
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li>
@@ -120,7 +120,7 @@ function Cookie() {
             </ul>
             <p className="mt-2">
               Si invita l&apos;utente a consultare tali informative per avere maggiori
-              dettagli sul trattamento effettuato dalle singole terze parti. [web:28]
+              dettagli sul trattamento effettuato dalle singole terze parti. 
             </p>
           </section>
 
@@ -133,7 +133,7 @@ function Cookie() {
               Al primo accesso al sito, un banner informa l&apos;utente che il sito
               utilizza cookie tecnici e, previo consenso, eventuali cookie per
               finalità ulteriori (analitiche o di profilazione). L&apos;utente può:
-              [web:28][web:31]
+             
             </p>
             <ul className="list-disc list-inside space-y-1 mb-2">
               <li>accettare tutti i cookie cliccando sul pulsante &quot;Accetta tutti&quot;;</li>
@@ -151,7 +151,7 @@ function Cookie() {
               apposito cookie tecnico e non verranno richieste nuovamente per almeno
               6 mesi, salvo che cambino in modo significativo le condizioni del
               trattamento o l&apos;utente cancelli i cookie dal proprio browser.
-              [web:28][web:31]
+              
             </p>
           </section>
 
@@ -165,12 +165,12 @@ function Cookie() {
               cookie anche attraverso le impostazioni del browser utilizzato,
               scegliendo, ad esempio, di bloccare l&apos;installazione di cookie da parte
               di siti terzi o di cancellare i cookie già presenti sul dispositivo.
-              [web:28][web:31]
+              
             </p>
             <p className="mb-2">
               Le modalità di gestione dei cookie variano a seconda del browser
               utilizzato. Di seguito alcuni link alle pagine di supporto dei
-              principali browser. [web:28]
+              principali browser. 
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li>
@@ -232,7 +232,7 @@ function Cookie() {
               >
                 Privacy Policy
               </a>
-              . [web:30]
+              . 
             </p>
           </section>
 
@@ -246,7 +246,7 @@ function Cookie() {
               anche in relazione all&apos;entrata in vigore di nuove normative di
               settore o all&apos;aggiornamento dei cookie utilizzati dal sito. Le
               modifiche sostanziali saranno comunicate tramite il sito e, se del
-              caso, tramite il banner cookie. [web:28]
+              caso, tramite il banner cookie.
             </p>
             <p className="mt-2 text-xs text-[#7a6555]">
               Ultimo aggiornamento: [data].
