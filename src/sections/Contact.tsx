@@ -214,7 +214,7 @@ export function Contact() {
             <div className="space-y-6">
               {[
                 { icon: Mail, label: 'Email', value: 'danubiamacario@gmail.com', href: 'mailto:danubiamacario+kit1@gmail.com' },
-                { icon: Phone, label: 'Telefono', value: '+39 123 456 7890', href: 'tel:+393519989647' },
+                { icon: Phone, label: 'Telefono', value: '+39 351 998 9647', href: 'tel:+393519989647' },
                 { icon: MapPin, label: 'Spedizione', value: 'In tutta Italia', href: null },
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
