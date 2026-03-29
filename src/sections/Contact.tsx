@@ -50,14 +50,14 @@ export function Contact() {
   };
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="contatti" 
+      id="contatti"
       className="py-32 lg:py-40 bg-[#2d1f16] relative overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, #c9b8a5 1px, transparent 0)`,
@@ -70,29 +70,26 @@ export function Contact() {
         {/* Section Header */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
           <div>
-            <span 
-              className={`text-xs font-medium text-[#a67c52] tracking-[0.3em] uppercase block mb-4 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+            <span
+              className={`text-xs font-medium text-[#a67c52] tracking-[0.3em] uppercase block mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               Contatti
             </span>
-            <h2 
-              className={`font-display text-5xl sm:text-6xl lg:text-7xl text-[#f5f0e8] leading-[0.95] transition-all duration-700 delay-100 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
+            <h2
+              className={`font-display text-5xl sm:text-6xl lg:text-7xl text-[#f5f0e8] leading-[0.95] transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
             >
               Ordina o
               <span className="block italic text-[#a67c52]">Richiedi Info</span>
             </h2>
           </div>
           <div className="flex items-end">
-            <p 
-              className={`text-[#c9b8a5] leading-relaxed transition-all duration-700 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
+            <p
+              className={`text-[#c9b8a5] leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
             >
-              Compila il modulo per ordinare il raccoglitore o per qualsiasi informazione. 
+              Compila il modulo per ordinare il raccoglitore o per qualsiasi informazione.
               Ti risponderemo entro 24 ore lavorative.
             </p>
           </div>
@@ -100,10 +97,9 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Form */}
-          <div 
-            className={`lg:col-span-3 transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-            }`}
+          <div
+            className={`lg:col-span-3 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              }`}
           >
             <div className="bg-[#3d2b1f] p-8 lg:p-10 relative">
               {/* Corner accents */}
@@ -211,15 +207,14 @@ export function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div 
-            className={`lg:col-span-2 space-y-8 transition-all duration-700 delay-500 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-            }`}
+          <div
+            className={`lg:col-span-2 space-y-8 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+              }`}
           >
             <div className="space-y-6">
               {[
-                { icon: Mail, label: 'Email', value: 'info@schematherapy.it', href: 'mailto:info@schematherapy.it' },
-                { icon: Phone, label: 'Telefono', value: '+39 123 456 7890', href: 'tel:+391234567890' },
+                { icon: Mail, label: 'Email', value: 'danubiamacario@gmail.com', href: 'mailto:danubiamacario+kit1@gmail.com' },
+                { icon: Phone, label: 'Telefono', value: '+39 123 456 7890', href: 'tel:+393519989647' },
                 { icon: MapPin, label: 'Spedizione', value: 'In tutta Italia', href: null },
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
