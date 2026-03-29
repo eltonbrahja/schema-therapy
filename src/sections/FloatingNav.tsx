@@ -8,8 +8,8 @@ type Section = {
 };
 
 const sections: Section[] = [
-  { id: 'prodotto', label: 'Prodotto', offset: -20 },
   { id: 'galleria', label: 'Galleria', offset: -20 },
+  { id: 'prodotto', label: 'Prodotto', offset: -20 },
   { id: 'prezzo',   label: 'Prezzo',   offset: -20 },
   { id: 'contatti', label: 'Contatti', offset: -20 },
 ];
@@ -26,7 +26,7 @@ function scrollToId(id: string, offset = DEFAULT_OFFSET) {
 }
 
 export function FloatingNav() {
-  const [active, setActive] = useState<string>('prodotto');
+  const [active, setActive] = useState<string>('galleria');
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // QUI: aggiorna automaticamente la sezione attiva mentre scrolli

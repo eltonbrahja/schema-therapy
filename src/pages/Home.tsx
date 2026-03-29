@@ -19,8 +19,8 @@ export default function Home() {
   return (
     <div id="top" className="min-h-screen bg-[#f8f5f0]">
       <Hero />
-      <Product />
       <Gallery />
+      <Product />
       <Pricing />
       <Contact />
       <Footer />

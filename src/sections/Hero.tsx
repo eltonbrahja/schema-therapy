@@ -11,8 +11,8 @@ export function Hero() {
     setIsVisible(true);
   }, []);
 
-  const scrollToProduct = () => {
-    document.getElementById("prodotto")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToGallery = () => {
+    document.getElementById("galleria")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -125,7 +125,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={scrollToProduct}
+                onClick={scrollToGallery}
                 className="border-[#2d1f16]/20 text-[#2d1f16] hover:bg-[#2d1f16] hover:text-white px-8 py-6 text-sm font-medium tracking-wide uppercase rounded-none transition-all duration-500"
               >
                 Esplora il contenuto
