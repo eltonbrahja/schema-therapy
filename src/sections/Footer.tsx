@@ -63,18 +63,18 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <p>
                 <a
-                  href="mailto:info@schematherapy.it"
+                  href="mailto:danubiamacario+kit1@gmail.com"
                   className="text-[#c9b8a5] hover:text-[#a67c52] transition-colors"
                 >
-                  info@schematherapy.it
+                  danubiamacario@gmail.com
                 </a>
               </p>
               <p>
                 <a
-                  href="tel:+391234567890"
+                  href="tel:+393519989647"
                   className="text-[#c9b8a5] hover:text-[#a67c52] transition-colors"
                 >
-                  +39 123 456 7890
+                  +39 351 998 9647
                 </a>
               </p>
               <p className="text-[#7a6555]">Spedizione in tutta Italia</p>
