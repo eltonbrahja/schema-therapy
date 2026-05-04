@@ -71,8 +71,10 @@ function Privacy() {
               <li>
                 <span className="font-medium">Dati relativi agli acquisti</span>: 
                 informazioni relative ai prodotti acquistati, importi, eventuali 
-                dati di fatturazione; i dati di pagamento sono trattati tramite 
-                provider terzi e non vengono archiviati direttamente sul sito.
+                dati di fatturazione; i dati di pagamento sono trattati 
+                esclusivamente tramite i provider di pagamento terzi utilizzati 
+                (Stripe, PayPal, Amazon) e non vengono archiviati direttamente 
+                sul sito.
               </li>
               <li>
                 <span className="font-medium">Cookie e strumenti di tracciamento</span>: 
