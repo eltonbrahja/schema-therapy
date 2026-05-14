@@ -10,7 +10,7 @@ type Section = {
 const sections: Section[] = [
   { id: 'galleria', label: 'Galleria', offset: -20 },
   { id: 'prodotto', label: 'Prodotto', offset: -20 },
-  { id: 'prezzo',   label: 'Prezzo',   offset: -20 },
+  { id: 'prezzo', label: 'Prezzo', offset: -20 },
   { id: 'contatti', label: 'Contatti', offset: -20 },
 ];
 
@@ -72,20 +72,18 @@ export function FloatingNav() {
               className={`
                 group flex items-center gap-2 px-3 py-2 rounded-full border
                 transition-all duration-300 ease-out
-                ${
-                  isActive
-                    ? 'bg-[#2d1f16] border-[#2d1f16] text-[#f5f0e8] shadow-lg shadow-black/20'
-                    : 'bg-[#f8f5f0]/90 border-[#cbb8a3] text-[#7a6555] hover:bg-white'
+                ${isActive
+                  ? 'bg-[#2d1f16] border-[#2d1f16] text-[#f5f0e8] shadow-lg shadow-black/20'
+                  : 'bg-[#f8f5f0]/90 border-[#cbb8a3] text-[#7a6555] hover:bg-white'
                 }
               `}
             >
               <span
                 className={`
                   w-2 h-2 rounded-full transition-colors
-                  ${
-                    isActive
-                      ? 'bg-[#f5f0e8]'
-                      : 'bg-[#cbb8a3] group-hover:bg-[#8b5a3c]'
+                  ${isActive
+                    ? 'bg-[#f5f0e8]'
+                    : 'bg-[#cbb8a3] group-hover:bg-[#8b5a3c]'
                   }
                 `}
               />

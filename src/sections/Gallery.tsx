@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn, ArrowLeft, ArrowRight } from 'lucide-react';
 
 // elementi + path immagini in public/img
 const galleryItems = [
@@ -131,7 +131,7 @@ export function Gallery() {
             <GalleryCard
               item={galleryItems[0]}
               onClick={() => setSelectedItem(galleryItems[0])}
-              className="h-80 lg:h-96"
+              className="h-64 sm:h-80 lg:h-96"
             />
           </div>
           <div
@@ -142,7 +142,7 @@ export function Gallery() {
             <GalleryCard
               item={galleryItems[1]}
               onClick={() => setSelectedItem(galleryItems[1])}
-              className="h-80 lg:h-96"
+              className="h-64 sm:h-80 lg:h-96"
             />
           </div>
 
@@ -210,36 +210,73 @@ export function Gallery() {
       {/* Lightbox */}
       <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
         <DialogContent
+          showCloseButton={false}
           className="
-            w-full max-w-[95vw] sm:max-w-[95vw]
-            bg-[#2d1f16] border-[#5c4a3d]
-            p-0 overflow-hidden
+            fixed inset-0 z-[9999] w-screen h-screen max-w-none 
+            sm:max-w-none sm:w-screen sm:h-screen
+            bg-[#2d1f16] border-none p-0 overflow-hidden rounded-none
+            flex items-center justify-center translate-x-0 translate-y-0
           "
         >
+          {/* Custom Close Button */}
           <button
             onClick={() => setSelectedItem(null)}
-            className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+            className="absolute top-8 right-8 z-[110] w-12 h-12 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 group"
           >
-            <X className="w-5 h-5 text-white" />
+            <X className="w-6 h-6 text-[#f5f0e8] group-hover:scale-110 transition-transform" />
           </button>
 
           {selectedItem && (
-            <div className="bg-[#1a120e] flex flex-col items-center justify-center">
-              <div className="w-full flex items-center justify-center p-4 sm:p-8">
-                <img
-                  src={selectedItem.src}
-                  alt={selectedItem.title}
-                  className="
-                    max-h-[85vh] max-w-[90vw]
-                    h-auto w-auto
-                    rounded-xl shadow-2xl object-contain
-                  "
-                />
-              </div>
-              <div className="px-6 pb-6 text-center">
-                <p className="font-display text-xl text-[#f5f0e8]">
-                  {selectedItem.title}
-                </p>
+            <div className="w-full h-full flex flex-col items-center justify-center p-4 sm:p-12 animate-in fade-in zoom-in duration-500">
+              <div className="relative w-full h-full flex flex-col items-center justify-center gap-8">
+                <div className="relative max-w-5xl max-h-[70vh] group">
+                  <img
+                    src={selectedItem.src}
+                    alt={selectedItem.title}
+                    className="
+                      w-auto h-auto max-w-full max-h-[70vh]
+                      shadow-[0_40px_100px_rgba(0,0,0,0.5)] 
+                      object-contain transition-transform duration-700
+                    "
+                  />
+                  {/* Subtle border around image */}
+                  <div className="absolute inset-0 border border-white/10 pointer-events-none" />
+                </div>
+                
+                <div className="text-center">
+                  <h3 className="font-display text-3xl sm:text-4xl text-[#f5f0e8] mb-4">
+                    {selectedItem.title}
+                  </h3>
+                  
+                  {/* Navigation Arrows */}
+                  <div className="flex items-center justify-center gap-8">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const currentIndex = galleryItems.findIndex(i => i.id === selectedItem.id);
+                        const prevIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                        setSelectedItem(galleryItems[prevIndex]);
+                      }}
+                      className="w-12 h-12 border border-[#a67c52]/30 rounded-full flex items-center justify-center text-[#a67c52] hover:bg-[#a67c52] hover:text-white transition-all duration-300 group/btn"
+                    >
+                      <ArrowLeft className="w-5 h-5 group-hover/btn:-translate-x-1 transition-transform" />
+                    </button>
+
+                    <div className="h-px w-12 bg-[#a67c52]/20" />
+
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const currentIndex = galleryItems.findIndex(i => i.id === selectedItem.id);
+                        const nextIndex = (currentIndex + 1) % galleryItems.length;
+                        setSelectedItem(galleryItems[nextIndex]);
+                      }}
+                      className="w-12 h-12 border border-[#a67c52]/30 rounded-full flex items-center justify-center text-[#a67c52] hover:bg-[#a67c52] hover:text-white transition-all duration-300 group/btn"
+                    >
+                      <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           )}
@@ -256,37 +293,50 @@ interface GalleryCardProps {
 }
 
 function GalleryCard({ item, onClick, className = '' }: GalleryCardProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <div
       onClick={onClick}
-      className={`group relative overflow-hidden cursor-pointer bg-gradient-to-br from-[#3d2b1f] to-[#2d1f16] ${className}`}
+      className={`group relative overflow-hidden cursor-pointer bg-[#3d2b1f] ${className}`}
     >
+      {/* Skeleton / Loading State */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-[#3d2b1f] animate-pulse flex items-center justify-center">
+          <div className="w-10 h-10 border border-[#a67c52]/20 rounded-full" />
+        </div>
+      )}
+
       {/* Immagine di sfondo */}
       {item.src && (
         <img
           src={item.src}
           alt={item.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700"
+          loading="lazy"
+          onLoad={() => setIsLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ${
+            isLoaded ? 'opacity-70 group-hover:opacity-100' : 'opacity-0'
+          }`}
         />
       )}
 
       {/* Overlay scuro per testo */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a120e]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
       {/* Contenuto centrale (lente + titolo) */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         <div className="text-center p-6">
-          <div className="w-12 h-12 mx-auto mb-4 border border-[#f5f0e8]/40 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:border-[#f5f0e8] transition-all">
-            <ZoomIn className="w-5 h-5 text-[#f5f0e8]/80 group-hover:text-[#f5f0e8] transition-colors" />
+          <div className="w-12 h-12 mx-auto mb-4 border border-[#f5f0e8]/20 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:border-[#a67c52] group-hover:bg-[#a67c52]/10 transition-all duration-500">
+            <ZoomIn className="w-5 h-5 text-[#f5f0e8]/60 group-hover:text-white transition-colors" />
           </div>
-          <p className="font-display text-lg text-[#f5f0e8] group-hover:text-white transition-colors">
+          <p className="font-display text-lg text-[#f5f0e8]/90 group-hover:text-white transition-colors tracking-wide">
             {item.title}
           </p>
         </div>
       </div>
 
       {/* Cornice / bordi */}
-      <div className="absolute inset-0 border border-transparent group-hover:border-[#a67c52]/40 transition-colors duration-500" />
+      <div className="absolute inset-0 border border-white/5 group-hover:border-[#a67c52]/30 transition-colors duration-700" />
     </div>
   );
 }
