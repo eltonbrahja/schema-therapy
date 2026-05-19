@@ -16,14 +16,14 @@ const galleryItems = [
     title: 'Scheda Fronte',
     size: 'medium',
     position: 'right',
-    src: '/img/NegIpercompensazione1.webp',
+    src: '/img/fronte.webp',
   },
   {
     id: 3,
     title: 'Scheda Retro',
     size: 'medium',
     position: 'left',
-    src: '/img/NegIpercompensazione2.webp',
+    src: '/img/retro.webp',
   },
   {
     id: 4,
