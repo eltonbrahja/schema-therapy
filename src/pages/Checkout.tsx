@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Shield, Truck, CreditCard, Headphones, ExternalLink } from "lucide-react";
+import { Shield, Truck, CreditCard, Headphones, ExternalLink, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /* ─── URL placeholder per ciascun metodo di pagamento ─── */
 // TODO: sostituisci con i link reali quando disponibili
@@ -84,6 +85,17 @@ function Checkout() {
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#2d1f16]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        {/* Torna alla Home */}
+        <div className="mb-12 flex justify-start">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#2d1f16] hover:text-[#8b5a3c] transition-all duration-300 group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            Ritorna alla home
+          </Link>
+        </div>
+
         {/* HEADER */}
         <header className="mb-14 text-center max-w-3xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#8b5a3c] mb-3">

@@ -10,7 +10,7 @@ import { FloatingNav } from "../sections/FloatingNav";
 
 export default function Home() {
   return (
-    <div id="top" className="min-h-screen bg-[#f8f5f0]">
+    <div id="top" className="min-h-screen bg-[#f8f5f0] overflow-x-hidden">
       <Hero />
       <Gallery />
       <Product />

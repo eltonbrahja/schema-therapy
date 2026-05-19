@@ -54,12 +54,13 @@ export function Hero() {
           <div className="order-2 lg:order-1">
             {/* Badge */}
             <div
-              className={`inline-flex items-center px-2 sm:px-4 py-2 bg-[#8b5a3c]/5 border border-[#8b5a3c]/10 rounded-full mb-6 sm:mb-8 transition-all duration-700 max-w-full overflow-hidden ${
+              className={`inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-[#8b5a3c]/5 border border-[#8b5a3c]/10 rounded-full mb-6 sm:mb-8 transition-all duration-700 max-w-full ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              <span className="text-[8px] min-[375px]:text-[10px] sm:text-xs font-medium text-[#8b5a3c] tracking-widest uppercase whitespace-nowrap overflow-hidden text-ellipsis">
-                Materiale professionale di Schema Therapy per psicologi e psicoterapeuti
+              <span className="text-[9px] sm:text-xs font-semibold text-[#8b5a3c] tracking-widest uppercase text-center leading-normal">
+                <span className="block sm:hidden">Materiale Professionale</span>
+                <span className="hidden sm:block">Materiale professionale di Schema Therapy per psicologi e psicoterapeuti</span>
               </span>
             </div>
 
@@ -134,9 +135,9 @@ export function Hero() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div className="flex items-center gap-4">
-                <div className="h-px w-8 bg-[#8b5a3c]/20" />
-                <p className="text-[10px] text-[#7a6555] uppercase tracking-[0.25em] font-semibold">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="h-px w-8 bg-[#8b5a3c]/20 hidden sm:block" />
+                <p className="text-[10px] text-[#7a6555] uppercase tracking-[0.2em] font-semibold leading-relaxed">
                   18 schemi maladattivi · 54 immagini illustrative · materiale pronto da usare in seduta
                 </p>
               </div>
@@ -154,7 +155,7 @@ export function Hero() {
             >
               <div className="relative max-w-xl lg:max-w-2xl mx-auto lg:ml-auto">
                 {/* carta dietro */}
-                <div className="absolute inset-0 translate-x-8 translate-y-10 rotate-2 bg-[#d0b9a0] rounded-sm shadow-2xl" />
+                <div className="absolute inset-0 translate-x-4 sm:translate-x-8 translate-y-6 sm:translate-y-10 rotate-1 sm:rotate-2 bg-[#d0b9a0] rounded-sm shadow-2xl" />
 
                 {/* tavola principale */}
                 <div className="relative bg-[#f5f0e8] rounded-sm shadow-[0_28px_80px_rgba(0,0,0,0.22)] overflow-hidden">
