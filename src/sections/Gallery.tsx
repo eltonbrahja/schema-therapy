@@ -9,7 +9,7 @@ const galleryItems = [
     title: 'Il Raccoglitore',
     size: 'large',
     position: 'left',
-    src: '/img/raccoglitoreChiuso.webp',
+    src: '/img/fotoCopertina.webp',
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const galleryItems = [
     title: 'Dettaglio',
     size: 'small',
     position: 'center',
-    src: '/img/fotoDettaglio.webp',
+    src: '/img/testo.webp',
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const galleryItems = [
     title: 'In Uso',
     size: 'medium',
     position: 'left',
-    src: '/img/raccoglitoreAperto.webp',
+    src: '/img/kitAperto.webp',
   },
 ] as const;
 
