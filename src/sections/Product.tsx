@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Layers, Image, BookOpen, Users, ArrowRight } from 'lucide-react';
+import { Layers, Image, BookOpen, Users } from 'lucide-react';
 
 const features = [
   {
@@ -184,7 +184,6 @@ export function Product() {
                   <span className="text-sm text-[#5c4a3d] group-hover:text-[#2d1f16] transition-colors">
                     {schema}
                   </span>
-                  <ArrowRight className="w-4 h-4 text-[#c9b8a5] opacity-0 group-hover:opacity-100 ml-auto transition-all" />
                 </div>
               ))}
             </div>

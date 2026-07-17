@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { default as Cookie } from "./pages/Cookie";
 import { default as Privacy } from "./pages/Privacy";
 import { default as Checkout } from "./pages/Checkout";
+import Prevendita from "./pages/Prevendita";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/cookie" element={<Cookie />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/prevendita" element={<Prevendita />} />
       {/* qui aggiungerai le altre due pagine, es:
           <Route path="/faq" element={<Faq />} />
           <Route path="/chi-siamo" element={<About />} /> */}

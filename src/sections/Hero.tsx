@@ -52,18 +52,6 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Colonna sinistra */}
           <div className="order-2 lg:order-1">
-            {/* Badge */}
-            <div
-              className={`inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-[#8b5a3c]/5 border border-[#8b5a3c]/10 rounded-full mb-6 sm:mb-8 transition-all duration-700 max-w-full ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              <span className="text-[9px] sm:text-xs font-semibold text-[#8b5a3c] tracking-widest uppercase text-center leading-normal">
-                <span className="block sm:hidden">Materiale Professionale</span>
-                <span className="hidden sm:block">Materiale professionale di Schema Therapy per psicologi e psicoterapeuti</span>
-              </span>
-            </div>
-
             {/* Titolo */}
             <h1
               className={`font-display text-3xl sm:text-5xl lg:text-6xl text-[#2d1f16] mb-4 leading-[1.15] transition-all duration-700 delay-100 ${
