@@ -33,12 +33,12 @@ const features = [
 ];
 
 const schemaList = [
-  ['Abbandono', 'Autocontrollo Insufficiente', 'Autosacrificio'],
-  ['Deprivazione Emotiva', 'Dipendenza / Incompetenza', 'Fallimento'],
-  ['Grandiosità', 'Inadeguatezza', 'Inibizione Emotiva'],
-  ['Invischiamento', 'Isolamento Sociale', 'Negatività'],
+  ['Abbandono/Instabilità', 'Autocontrollo/Autodisciplina Insufficiente', 'Autosacrificio'],
+  ['Deprivazione Emotiva', 'Dipendenza/Incompetenza', 'Fallimento'],
+  ['Grandiosità', 'Inadeguatezza/Vergogna', 'Inibizione Emotiva'],
+  ['Invischiamento', 'Esclusione Sociale/Alienazione', 'Negativismo/Pessimismo'],
   ['Punitività', 'Ricerca di Approvazione', 'Sfiducia/Abuso'],
-  ['Sottomissione', 'Standard Rigidi', 'Vulnerabilità alla malattia e al danno'],
+  ['Sottomissione', 'Standard Rigidi/Ipercriticità', 'Vulnerabilità al Pericolo e alle Malattie'],
 ];
 
 export function Product() {
