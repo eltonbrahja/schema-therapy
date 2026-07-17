@@ -152,7 +152,7 @@ function Checkout() {
                   </div>
                   <div className="text-right">
                     <p className="font-display text-3xl text-[#2d1f16]">
-                      €180
+                      €120
                     </p>
                     <p className="text-[11px] text-[#7a6555]">
                       IVA e spedizione incluse*

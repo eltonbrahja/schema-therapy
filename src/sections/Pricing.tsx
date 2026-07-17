@@ -91,7 +91,7 @@ export function Pricing() {
                 </p>
                 <div className="flex items-baseline gap-2">
                   <span className="font-display text-6xl sm:text-7xl lg:text-8xl text-[#2d1f16]">
-                    €180
+                    €120
                   </span>
                   <span className="text-[#7a6555]">IVA inclusa</span>
                 </div>
