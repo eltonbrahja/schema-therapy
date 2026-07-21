@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Shield, Truck, ExternalLink, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Footer } from "../sections/Footer";
 
 const STRIPE_URL = "https://buy.stripe.com/prevendita_placeholder";
 const PAYPAL_URL = "https://paypal.me/prevendita_placeholder";
@@ -170,9 +171,7 @@ export default function PrevenditaAcquisto() {
         </div>
       </div>
 
-      <footer className="w-full py-8 border-t border-[#e8e0d5] bg-white text-center text-xs text-[#7a6555]">
-        <p>© {new Date().getFullYear()} Schema Therapy. Tutti i diritti riservati.</p>
-      </footer>
+      <Footer />
     </main>
   );
 }
