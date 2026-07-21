@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, Mail, ArrowRight, Shield, Truck, ChevronRight, ChevronLeft, X, ZoomIn, ArrowLeft, CheckCircle } from "lucide-react";
+import { Check, Mail, ArrowRight, Shield, Truck, ChevronRight, ChevronLeft, X, ZoomIn, ArrowLeft, CheckCircle, Loader2 } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Footer } from "../sections/Footer";
 
 const galleryItems = [
   {
@@ -147,14 +148,55 @@ const faqList = [
 
 export default function Prevendita() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
   const [selectedItem, setSelectedItem] = useState<typeof galleryItems[number] | null>(null);
 
-  const handleNotifyMe = (e: React.FormEvent) => {
+  const handleNotifyMe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
-    toast.success("Grazie! Ti avviseremo non appena il prodotto sarà disponibile.");
-    setEmail("");
+    const trimmedEmail = email.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!trimmedEmail) {
+      toast.error("Inserisci il tuo indirizzo email.");
+      return;
+    }
+
+    if (!emailRegex.test(trimmedEmail)) {
+      toast.error("Inserisci un indirizzo email valido (es. nome@esempio.it).");
+      return;
+    }
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.staticforms.dev/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          apiKey: "sf_5125c4cc17cbdbc66e230996",
+          email: trimmedEmail,
+          subject: "Nuova richiesta avviso disponibilità kit - Prevendita",
+          message: `Richiesta di notifica per il kit di Schema Therapy dall'utente: ${trimmedEmail}`,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success !== false) {
+        setIsSuccessOpen(true);
+        setEmail("");
+      } else {
+        toast.error(data.message || "Si è verificato un errore durante l'invio. Riprova più tardi.");
+      }
+    } catch {
+      toast.error("Si è verificato un errore di connessione. Riprova più tardi.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const nextSlide = () => {
@@ -502,13 +544,22 @@ export default function Prevendita() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="La tua email"
                 required
-                className="flex-grow px-4 py-3 text-xs text-[#2d1f16] focus:outline-none focus:ring-2 focus:ring-[#8b5a3c] rounded-lg"
+                disabled={isSubmitting}
+                className="flex-grow px-4 py-3 text-xs text-[#2d1f16] focus:outline-none focus:ring-2 focus:ring-[#8b5a3c] rounded-lg disabled:opacity-60"
               />
               <button
                 type="submit"
-                className="bg-[#8b5a3c] hover:bg-white hover:text-[#2d1f16] text-[#f5f0e8] text-xs font-semibold px-6 py-3 uppercase tracking-wider transition-colors duration-300 rounded-lg shrink-0"
+                disabled={isSubmitting}
+                className="bg-[#8b5a3c] hover:bg-white hover:text-[#2d1f16] text-[#f5f0e8] text-xs font-semibold px-6 py-3 uppercase tracking-wider transition-colors duration-300 rounded-lg shrink-0 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Avvisami quando è disponibile
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Invio in corso...</span>
+                  </>
+                ) : (
+                  <span>Avvisami quando è disponibile</span>
+                )}
               </button>
             </form>
             <p className="text-[10px] text-[#7a6555] mt-3">
@@ -519,9 +570,7 @@ export default function Prevendita() {
 
       </main>
 
-      <footer className="w-full py-8 border-t border-[#e8e0d5] bg-white text-center text-xs text-[#7a6555]">
-        <p>© {new Date().getFullYear()} Schema Therapy. Tutti i diritti riservati.</p>
-      </footer>
+      <Footer />
 
       {/* Lightbox */}
       <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
@@ -596,6 +645,30 @@ export default function Prevendita() {
               </div>
             </div>
           )}
+        </DialogContent>
+      </Dialog>
+      {/* Pop-up di Conferma Invio Riuscito */}
+      <Dialog open={isSuccessOpen} onOpenChange={setIsSuccessOpen}>
+        <DialogContent className="bg-[#faf8f5] border border-[#e8e0d5] sm:max-w-md p-6 sm:p-8 text-center rounded-2xl shadow-2xl">
+          <div className="mx-auto w-14 h-14 bg-[#8b5a3c]/10 text-[#8b5a3c] rounded-full flex items-center justify-center mb-4">
+            <CheckCircle className="w-8 h-8 text-[#8b5a3c]" />
+          </div>
+          <DialogHeader className="text-center sm:text-center space-y-2">
+            <DialogTitle className="font-display text-2xl font-bold text-[#2d1f16]">
+              Richiesta ricevuta!
+            </DialogTitle>
+            <DialogDescription className="text-sm text-[#5c4a3d] leading-relaxed">
+              Grazie per l'interesse! Abbiamo registrato la tua email con successo e ti avviseremo non appena il Kit di Schema Therapy sarà disponibile.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-6">
+            <Button
+              onClick={() => setIsSuccessOpen(false)}
+              className="w-full bg-[#2d1f16] hover:bg-[#8b5a3c] text-white py-3 text-sm font-bold uppercase tracking-wide rounded-lg transition-colors shadow-md"
+            >
+              Perfetto, grazie
+            </Button>
+          </div>
         </DialogContent>
       </Dialog>
     </div>
