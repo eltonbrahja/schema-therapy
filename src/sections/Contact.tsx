@@ -12,6 +12,17 @@ const WHATSAPP_TEXT = encodeURIComponent(
 );
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
 
+const sanitizeEmail = (emailStr: string): string => {
+  return emailStr.trim().toLowerCase().replace(/[\r\n]/g, "").slice(0, 254);
+};
+
+const sanitizeText = (str: string, maxLen = 1000): string => {
+  return str
+    .trim()
+    .slice(0, maxLen)
+    .replace(/[<>]/g, "");
+};
+
 export function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -44,11 +55,61 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const cleanEmail = sanitizeEmail(formData.email);
+    const cleanName = sanitizeText(formData.name, 100);
+    const cleanPhone = sanitizeText(formData.phone, 30);
+    const cleanMessage = sanitizeText(formData.message, 2000);
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!cleanEmail) {
+      toast.error('Inserisci il tuo indirizzo email.');
+      return;
+    }
+
+    if (!emailRegex.test(cleanEmail)) {
+      toast.error('Inserisci un indirizzo email valido (es. nome@esempio.it).');
+      return;
+    }
+
+    if (!cleanName) {
+      toast.error('Inserisci il tuo nome.');
+      return;
+    }
+
+    if (!cleanMessage) {
+      toast.error('Inserisci un messaggio.');
+      return;
+    }
+
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast.success('Messaggio inviato con successo!');
+    try {
+      const response = await fetch('https://api.staticforms.dev/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          apiKey: 'sf_361dcebf1ce4b2240a361733',
+          name: cleanName,
+          email: cleanEmail,
+          phone: cleanPhone,
+          message: cleanMessage,
+          subject: `Nuovo messaggio dal sito da ${cleanName}`,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success !== false) {
+        setIsSubmitted(true);
+        toast.success('Messaggio inviato con successo!');
+      } else {
+        toast.error(data.message || "Si è verificato un errore durante l'invio. Riprova più tardi.");
+      }
+    } catch {
+      toast.error("Si è verificato un errore di connessione. Riprova più tardi.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

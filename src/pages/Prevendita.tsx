@@ -146,6 +146,10 @@ const faqList = [
   }
 ];
 
+const sanitizeEmail = (emailStr: string): string => {
+  return emailStr.trim().toLowerCase().replace(/[\r\n]/g, "").slice(0, 254);
+};
+
 export default function Prevendita() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -155,15 +159,15 @@ export default function Prevendita() {
 
   const handleNotifyMe = async (e: React.FormEvent) => {
     e.preventDefault();
-    const trimmedEmail = email.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const cleanEmail = sanitizeEmail(email);
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (!trimmedEmail) {
+    if (!cleanEmail) {
       toast.error("Inserisci il tuo indirizzo email.");
       return;
     }
 
-    if (!emailRegex.test(trimmedEmail)) {
+    if (!emailRegex.test(cleanEmail)) {
       toast.error("Inserisci un indirizzo email valido (es. nome@esempio.it).");
       return;
     }
@@ -179,9 +183,9 @@ export default function Prevendita() {
         },
         body: JSON.stringify({
           apiKey: "sf_5125c4cc17cbdbc66e230996",
-          email: trimmedEmail,
+          email: cleanEmail,
           subject: "Nuova richiesta avviso disponibilità kit - Prevendita",
-          message: `Richiesta di notifica per il kit di Schema Therapy dall'utente: ${trimmedEmail}`,
+          message: `Richiesta di notifica per il kit di Schema Therapy dall'utente: ${cleanEmail}`,
         }),
       });
 
